@@ -1,0 +1,20 @@
+on:
+  push:
+    branches: [ "main", "dev" ]
+  pull_request:
+    branches: [ "main", "dev"  ]
+    
+name: 🚀 CI/CD build test
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Commit Checkout
+        uses: actions/checkout@v2
+
+      - name: 🔨 Project Build
+         run: |
+           yarn
+           npm run build
+
