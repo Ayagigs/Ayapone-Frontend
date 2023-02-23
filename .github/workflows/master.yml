@@ -9,14 +9,12 @@ jobs:
   build:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
     steps:
       - name: 🚚 Commit Checkout
         uses: actions/checkout@v2
 
       - name: 🔨 Project Build
-      - run: npm install
-      - run: npm run build
-
+        run: |
+          npm install
+          npm run build
+  
