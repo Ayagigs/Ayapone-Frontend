@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Product Listing</title>
+  </head>
+  <body>
+    <p class="title--statement">Product Information</p>
+    <div class="wrapper">
+      <div class="form">
+        <form action="#" method="get">
+         
+          <div class="form--main">
+            <div class="input-box">
+              <label for="productname">
+                <span>Product Name</span>
+              </label>
+              <input
+                type="text"
+                id="productname"
+                name="product"
+                placeholder="Product  Name"
+              />
+            </div>
+
+            <div class="select--wrapper">
+              <label for="card">
+                <span>Brand</span>
+              </label>
+              <select id="card" name="usercard" placeholder="Select Brand">
+                <option value="" disabled selected>Select Brand</option>
+              </select>
+            </div>
+
+            <div class="select--wrapper">
+              <label for="color">
+                <span>Color</span>
+              </label>
+              <select id="color" name="usercolor">
+                <option value="" disabled selected>
+                  Select available color(s)
+                </option>
+              </select>
+            </div>
+            
+            <div class="dualselect">
+            <div class="dualselect--wrapper">
+              <label for="quantity">
+                <span>Quantity</span>
+              </label>
+              <select id="color" name="quantity">
+                <option value="" disabled selected>
+                  Select Quantity Available
+                </option>
+              </select>
+            </div>
+            <div class="dualselect--wrapper">
+              <label for="availability">
+                <span>Product Availability</span>
+              </label>
+              <select id="color" name="quantity">
+                <option value="" disabled selected>
+                  Product Availability
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="select--wrapper">
+            <label for="card">
+              <span>Product Description</span>
+            </label>
+            <textarea rows="10" cols="60"></textarea>
+          </div>
+
+          <div class="button">
+            <button type="button" class="whitebutton">Back</button>
+            <button type="button" class="orangebutton">Save & Continue</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
