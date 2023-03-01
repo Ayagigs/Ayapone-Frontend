@@ -113,7 +113,7 @@ const Login = () => {
 
       <GoogleButton type="light" label="Continue with Google" />
 
-      <br />
+      <br /><br />
 
       <Divider>OR</Divider>
 
@@ -151,7 +151,7 @@ const Login = () => {
       <Button className={classes.button} variant="contained">
         Login
       </Button>
-      {/* <p>Dont have an account? <link>Sign Up</link></p> */}
+      
     </Paper>
   );
 };
