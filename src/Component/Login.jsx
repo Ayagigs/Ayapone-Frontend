@@ -7,6 +7,8 @@ import GoogleButton from "react-google-button";
 import { Paper, TextField, Button, Typography } from "@material-ui/core";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import Link from '@mui/material/Link';
+import AyaponeLogo from '../assets/Logo PNG.png'
 
 const useStyles = makeStyles({
   root: {
@@ -39,15 +41,15 @@ const useStyles = makeStyles({
   loginText: {
     fontFamily: "Noto Sans",
     fontStyle: "normal",
-    fontWeight: 600,
+    fontWeight: "600",
     fontSize: "24px",
     lineHeight: "33px",
     display: "flex",
     alignItems: "center",
     color: "#483C31",
     flex: "none",
-    order: 0,
-    flexGrow: 0,
+    order: "0",
+    flexGrow: "0",
   },
 
   loginStatement: {
@@ -62,6 +64,7 @@ const useStyles = makeStyles({
     alignItems: "center",
     letterSpacing: "0.0125em",
     color: "#483C31",
+    
   },
 
   emailInputLabel: {
@@ -83,8 +86,8 @@ const useStyles = makeStyles({
     position: "absolute",
     width: "137px",
     height: "22px",
-    left: "285px",
-    top: "425px",
+    left: "323px",
+    top: "430px",
     fontFamily: 'Noto Sans',
     fontStyle: "normal",
     fontWeight: "400",
@@ -93,17 +96,35 @@ const useStyles = makeStyles({
     display: "flex",
     alignItems: "center",
     letterSpacing: "0.0125em",
-   
+    },
+
+    buttonGoogle: {
+    width: "100%",
+    marginTop: "16px",
   },
+  span:{
+    color: "#FF7417",
+  },
+
+  logo: {
+    position: "absolute",
+    width: "334px",
+    height: "143px",
+    left: "540px",
+    top: "63px",
+    color: "black",
+  }
 });
 
 const Login = () => {
   const classes = useStyles();
   const [showPassword, setShowPassword] = useState(false);
-  const handleClickShowPassword = () => setShowPassword(!showPassword);
+  const handleClickShowPassword  = () => setShowPassword(!showPassword);
   const handleMouseDownPassword = () => setShowPassword(!showPassword);
 
   return (
+    <div>
+    <img src={AyaponeLogo} alt="logo" className={classes.logo} />
     <Paper className={classes.root}>
       <Typography className={classes.loginText}>Login</Typography>
       <Typography className={classes.loginStatement}>
@@ -111,11 +132,11 @@ const Login = () => {
       </Typography>
       <br />
 
-      <GoogleButton type="light" label="Continue with Google" />
+      <GoogleButton type="light" label="Continue with Google" style={{width:"100%"}}/>
 
-      <br /><br />
+      <br />
 
-      <Divider>OR</Divider>
+      <Divider orientation="horizontal">OR</Divider>
 
       <TextField
         className={classes.textField}
@@ -151,9 +172,15 @@ const Login = () => {
       <Button className={classes.button} variant="contained">
         Login
       </Button>
-      
+      <Typography>Don't have an account?
+         <Link href="#" underline="none">
+                <span className={classes.span}> Sign up</span>
+         </Link>
+    </Typography>
     </Paper>
+    </div>
   );
 };
+
 
 export default Login;
