@@ -54,7 +54,9 @@ body {
     border-top: 2px solid #bfb4a3;
     width: 10%;
   }
+
   .one {
+    margin-left: -120px;
     border: 2px solid #a94b0c;
     border-radius: 50%;
     width: 48px;
