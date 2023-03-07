@@ -25,7 +25,61 @@ body {
     height: 100vh;
     margin-bottom: 50px;
   }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
 
+  .img {
+    margin-right: auto;
+  }
+
+  .support {
+    margin-left: auto;
+    margin-right: 60px;
+  }
+
+  .support--link {
+    text-decoration: none;
+    color: #483c31;
+  }
+  .line1 {
+    border-top: 2px solid #a94b0c;
+    width: 10%;
+  }
+  .line {
+    border-top: 2px solid #bfb4a3;
+    width: 10%;
+  }
+  .one {
+    border: 2px solid #a94b0c;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .two,
+  .three,
+  .four {
+    border: 2px solid #bfb4a3;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title--statement {
+    font-weight: 600;
+    font-size: 24px;
+  }
   .form {
     text-align: start;
     border: 2px solid white;
