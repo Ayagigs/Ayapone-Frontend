@@ -22,7 +22,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100dvh;
     margin-bottom: 50px;
   }
   .header {
@@ -96,7 +96,6 @@ body {
 
   form {
     padding: 30px;
-    /* margin-bottom: 50px; */
   }
   input,
   select {
@@ -121,21 +120,6 @@ body {
     margin-top: 20px;
     position: relative;
   }
-
-  /* .dualselect--wrapper::after {
-    content: "▼";
-    font-size: 1rem;
-    top: 40px;
-    right: 10px;
-    position: absolute;
-  } */
-  /* .select--wrapper::after {
-    content: "▼";
-    font-size: 1rem;
-    top: 40px;
-    right: 10px;
-    position: absolute;
-  } */
 
   .dualselect {
     display: flex;
