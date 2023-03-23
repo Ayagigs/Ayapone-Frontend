@@ -11,6 +11,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@h2d2/shopicons": "^1.7.0",
     "@mui/material": "^5.11.10",
     "lottie-react": "^2.4.0",
     "react": "^18.2.0",
