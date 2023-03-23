@@ -1,9 +1,17 @@
+import DashboardNavBar from '../../components/DashboardNavBar'
+import DashboardSideBar from '../../components/DashboardSideBar'
 
 const Dashboard = () => {
   return (
-    <main>
-      dashboard page
-    </main>
+    <>
+      <DashboardNavBar />
+      <DashboardSideBar />
+
+      <main>
+        dashboard page
+
+      </main>
+    </>
   );
 };
 
