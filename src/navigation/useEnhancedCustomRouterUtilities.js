@@ -1,4 +1,4 @@
-import { useNavigationHistoryStore } from 'store/navigationHistoryStore'
+import { useNavigationHistoryStore } from '../store/navigationHistoryStore'
 import { useLayoutEffect, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 

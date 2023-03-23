@@ -1,18 +1,19 @@
 import { Route, Routes } from 'react-router-dom'
 
 import routes from './routes'
-import AdminSignInPage from 'pages/authentication/SignIn'
-import BuyerSignInPage from 'pages/authentication/SignIn'
-import BuyerSignUpPage from 'pages/authentication/SignUp'
-import MerchantSignInPage from 'pages/authentication/SignIn'
-import MerchantSignUpPage from 'pages/authentication/SignUp'
-import HomePage from 'pages/home/HomePage'
-import DashboardPage from 'pages/edit/EditPage'
-import PageNotFound from 'pages/PageNotFound'
+import AdminSignInPage from '../pages/auth/admin/SignIn'
+import BuyerSignInPage from '../pages/auth/buyer/SignIn'
+import BuyerSignUpPage from '../pages/auth/buyer/SignUp'
+import MerchantSignInPage from '../pages/auth/merchant/SignIn'
+import MerchantSignUpPage from '../pages/auth/merchant/SignUp'
+import HomePage from '../pages/HomePage'
+import DashboardPage from '../pages/dashboard/Dashboard'
+import PageNotFound from '../pages/PageNotFound'
 import useEnhancedCustomRouterUtilities from './useEnhancedCustomRouterUtilities'
 
 const AppRouter = () => {
   useEnhancedCustomRouterUtilities()
+  console.log('in router')
   return (
     <Routes>
       <Route path={routes.HOME_PAGE} element={<HomePage />} />

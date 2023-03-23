@@ -1,9 +1,9 @@
 import Lottie from "lottie-react";
 import { useNavigate } from "react-router-dom";
 
-import PageNotFoundAnimation from "assets/page-not-found.json";
-import { useNavigationHistoryStore } from "store/navigationHistoryStore";
-import routes from "navigation/routes";
+import PageNotFoundAnimation from "../assets/page-not-found.json";
+import { useNavigationHistoryStore } from "../store/navigationHistoryStore";
+import routes from "../navigation/routes";
 
 const PageNotFound = () => {
   const { history } = useNavigationHistoryStore();

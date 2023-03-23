@@ -2,7 +2,7 @@ import { create } from 'zustand'
 import { createJSONStorage, persist } from 'zustand/middleware'
 
 const navigationHistoryStore = create(
-  persist <Readonly<INavigationHistoryStore>> (
+  persist (
     (set, get) => ({
       history: [],
       setHistory: (pathName) =>
