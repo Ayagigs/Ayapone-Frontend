@@ -1,7 +1,7 @@
 import Lottie from "lottie-react";
 import { useNavigate } from "react-router-dom";
 
-import PageNotFoundAnimation from "../assets/page-not-found.json";
+// import PageNotFoundAnimation from "../assets/page-not-found.json";
 import { useNavigationHistoryStore } from "../store/navigationHistoryStore";
 import routes from "../navigation/routes";
 
@@ -20,11 +20,11 @@ const PageNotFound = () => {
   return (
     <main className="">
       <h1 className="">Sorry page not found</h1>
-      <Lottie
+      {/* <Lottie
         className=""
         animationData={PageNotFoundAnimation}
         loop={true}
-      />
+      /> */}
       <span className="">
         You might have wandered off track, let's get you back
         <button
