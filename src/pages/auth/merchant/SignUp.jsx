@@ -3,6 +3,10 @@ import AyaponeLogo from '../../../assets/images/ayapone_logo.svg'
 import InputBox from '../../../components/forms/InputBox'
 import { Link } from 'react-router-dom'
 import routes from '../../../navigation/routes'
+import StepOne from './components/StepOne'
+import StepTwo from './components/StepTwo'
+import StepThree from './components/StepThree'
+import StepFour from './components/StepFour'
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -19,28 +23,16 @@ const SignUp = () => {
             <span className="text-base ">Create an account to sell on Ayapone</span>
           </div>
 
-          <div className="flex flex-wrap -mx-3 mb-6">
-            <div className="w-full md:w-1/2 px-3">
-              <InputBox name={'first_name'} width={'w-full'} label={'First Name'} isCompulsory={true} placeholder={'First Name'} />
-              {/* <p class="text-red-500 text-xs italic">Please fill out this field.</p> */}
-            </div>
-            <div className="w-full md:w-1/2 px-3">
-              <InputBox name={'last_name'} width={'w-full'} label={'Last Name'} isCompulsory={true} placeholder={'Last Name'} />
-            </div>
-          </div>
-
-          <InputBox name={'email'} label={'Email Address'} isCompulsory={true} placeholder={'Email Address'} />
-          <InputBox name={'phone'} label={'Phone Number'} isCompulsory={true} placeholder={'Phone Number'} />
-          <InputBox name={'password'} label={'Password'} isCompulsory={true} type={'password'} placeholder={'Password'} />
-
-          <button type="submit" className='bg-ayaPrimary-600 font-bold rounded-[8px] mt-12 text-white w-[426px] h-[54px]'>
-            Sign Up
-          </button>
+          <ul data-te-stepper-init
+            class="relative m-0 flex list-none justify-between overflow-hidden p-0 transition-[height] duration-200 ease-in-out">
+            <StepOne />
+            <StepTwo />
+            <StepThree />
+            <StepFour />
+          </ul>
 
           <div className="text-center mt-10">
             <span className="text-base">Already a Merchant? <Link to={routes.MERCHANT_SIGN_IN_PAGE} className='font-bold text-ayaPrimary-600'>Log In</Link></span>
-            
-            {/* <div className="text-base pt-6">By signing up you accept our <Link to={routes.TERMS_AND_CONDITION_PAGE} className='text-ayaPrimary-600'>terms and condition & private policy</Link></div> */}
           </div>
         </div>
     </div>
