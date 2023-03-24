@@ -5,20 +5,19 @@ const Dashboard = () => {
   return (
     <main className="container bg-ayaNeutral-100 h-auto font-nunito flex">
         <DashboardSideBar />
-        <div>
         <DashboardNavBar pagename={'Dashboard'}/>
 
-      <main>
-        dashboard page<br/><br/><br/><br/><br/>
-        dashboard page<br/><br/><br/><br/><br/>
-        dashboard page<br/><br/><br/><br/><br/>
-        dashboard page<br/><br/><br/><br/><br/>
-        dashboard page<br/><br/><br/><br/><br/>
-        dashboard page<br/><br/><br/><br/><br/>
-        dashboard page<br/><br/><br/><br/><br/>
-        dashboard page<br/><br/><br/><br/><br/>
+        <main className='p-12'>
+          dashboard page<br/><br/><br/><br/><br/>
+          dashboard page<br/><br/><br/><br/><br/>
+          dashboard page<br/><br/><br/><br/><br/>
+          dashboard page<br/><br/><br/><br/><br/>
+          dashboard page<br/><br/><br/><br/><br/>
+          dashboard page<br/><br/><br/><br/><br/>
+          dashboard page<br/><br/><br/><br/><br/>
+          dashboard page<br/><br/><br/><br/><br/>
 
-      </main></div>
+        </main>
     </main>
   );
 };

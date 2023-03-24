@@ -5,7 +5,7 @@ import Logo from '../assets/images/ayapone_logo.svg'
 
 const DashboardSideBar = () => {
   return (
-    <div className="w-64 h-screen bg-white px-6 text-ayaNeutral-900">
+    <aside className="w-64 h-screen bg-white px-6 text-ayaNeutral-900 sticky top-0">
       <div className='py-7 pl-6'>
         <img src={Logo} alt="Ayapone" srcset={Logo} />
       </div>
@@ -31,7 +31,7 @@ const DashboardSideBar = () => {
         </li>
       </ul>
       <div className='text-ayaDanger-200 h-14 py-4 pl-6 mt-14 rounded-lg hover:bg-ayaDanger-100'>Logout</div>
-    </div>
+    </aside>
   )
 }
 
