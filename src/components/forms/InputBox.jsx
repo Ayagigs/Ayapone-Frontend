@@ -1,26 +1,24 @@
-import { Link } from 'react-router-dom'
 
 const InputBox = ({
   name,
+  label,
   isCompulsory,
   ...otherProps
 }) => {
   return (
-    <>
-      <div className="font-poppins mt-1 ">
-        <label className="font-bold text-sm" htmlFor={name}>
-          {name}
+      <div className="font-notosans mt-6 ">
+        <label className="font-bold text-sm mb-2" htmlFor={name}>
+          {label}
           {isCompulsory && <span className="text-red-500">*</span>}
         </label>
         <input
-          className="flex h-8 bg-shuInputBackgroundGray text-sm border rounded-md border-shuInputBorderGray focus:border-shuYellowWarning w-full outline-none px-2 placeholder:text-shuGrey placeholder:font-nunito placeholder:text-sm "
+          className="flex h-[43px] bg-white text-sm border rounded-[8px] border-ayaNeutral-600 w-[309px] outline-none px-6 placeholder:text-ayaNeutral-500 placeholder:text-sm "
           type="text"
           id={name}
           name={name}
           {...otherProps}
         />
       </div>
-    </>
   )
 }
 
