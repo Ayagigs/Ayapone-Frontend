@@ -26,7 +26,7 @@ module.exports = {
         'ayaPrimary-200': '#FADAC4',
         'ayaPrimary-100': '#FFF6F0',
         'ayaNeutral-900': '#483C31',
-        'ayaNeutral-800': '#483C31',
+        'ayaNeutral-800': '#463D30',
         'ayaNeutral-700': '#605042',
         'ayaNeutral-600': '#917D6B',
         'ayaNeutral-500': '#AE9D8E',

@@ -3,9 +3,10 @@ import DashboardSideBar from '../../components/DashboardSideBar'
 
 const Dashboard = () => {
   return (
-    <main className="bg-ayaNeutral-100 h-auto font-nunito">
-      <DashboardNavBar pagename={'Dashboard'}/>
-      <DashboardSideBar />
+    <main className="container bg-ayaNeutral-100 h-auto font-nunito flex">
+        <DashboardSideBar />
+        <div>
+        <DashboardNavBar pagename={'Dashboard'}/>
 
       <main>
         dashboard page<br/><br/><br/><br/><br/>
@@ -17,7 +18,7 @@ const Dashboard = () => {
         dashboard page<br/><br/><br/><br/><br/>
         dashboard page<br/><br/><br/><br/><br/>
 
-      </main>
+      </main></div>
     </main>
   );
 };
