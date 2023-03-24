@@ -30,7 +30,7 @@ const SignUp = () => {
           <div className="text-center mt-10">
             <span className="text-base">Already have an account? <Link to={routes.BUYER_SIGN_IN_PAGE} className='font-bold text-ayaPrimary-600'>Log In</Link></span>
             
-            <div className="text-lg pt-6">By signing up you accept our <Link to={routes.TERMS_AND_CONDITION_PAGE} className='text-ayaPrimary-600'>terms and condition & private policy</Link></div>
+            <div className="text-base pt-6">By signing up you accept our <Link to={routes.TERMS_AND_CONDITION_PAGE} className='text-ayaPrimary-600'>terms and condition & private policy</Link></div>
           </div>
         </div>
     </div>
