@@ -25,13 +25,10 @@ const SignUp = () => {
             <span className="text-base ">Create an account to sell on Ayapone</span>
           </div>
 
-          <ul data-te-stepper-init
-            className="relative m-0 flex list-none justify-between overflow-hidden p-0 transition-[height] duration-200 ease-in-out">
-            <StepOne />
-            <StepTwo />
-            <StepThree />
-            <StepFour />
-          </ul>
+          <StepOne />
+          <StepTwo />
+          <StepThree />
+          <StepFour />
 
           <div className="text-center mt-10">
             <span className="text-base">Already a Merchant? <Link to={routes.MERCHANT_SIGN_IN_PAGE} className='font-bold text-ayaPrimary-600'>Log In</Link></span>
