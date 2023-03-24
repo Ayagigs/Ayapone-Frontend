@@ -1,4 +1,5 @@
 import InputBox from '../../../../components/forms/InputBox'
+import { HiArrowNarrowRight } from 'react-icons/hi'
 
 const StepOne = () => {
   return (
@@ -17,9 +18,9 @@ const StepOne = () => {
       <InputBox name={'phone'} label={'Phone Number'} isCompulsory={true} placeholder={'Phone Number'} />
       <InputBox name={'password'} label={'Password'} isCompulsory={true} type={'password'} placeholder={'Password'} />
 
-      <button type="submit" className='bg-ayaPrimary-600 font-bold rounded-[8px] mt-12 text-white w-[426px] h-[54px]'>
-        Sign Up
-      </button>
+        <button className='bg-ayaPrimary-600 font-bold rounded-[8px] mt-12 text-white w-[426px] h-[50px] flex space-x-2 justify-center items-center'>
+          Next <HiArrowNarrowRight />
+        </button>
     </>
   )
 }

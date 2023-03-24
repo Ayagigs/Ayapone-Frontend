@@ -7,6 +7,7 @@ import StepOne from './components/StepOne'
 import StepTwo from './components/StepTwo'
 import StepThree from './components/StepThree'
 import StepFour from './components/StepFour'
+import Stepper from "./components/Stepper";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -24,6 +25,8 @@ const SignUp = () => {
             <span className="font-bold text-2xl ">Merchant Sign Up</span><br />
             <span className="text-base ">Create an account to sell on Ayapone</span>
           </div>
+
+          <Stepper />
 
           <StepOne />
           <StepTwo />
