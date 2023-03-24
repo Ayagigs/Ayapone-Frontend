@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@mui/base";
 import {
   Paper,
   TextField,
   Button,
   Typography,
-} from "@material-ui/core";
+} from "@mui/base";
 import Link from "@mui/material/Link";
 import InputAdornment from "@mui/material/InputAdornment";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import VisibilityIcon from "@mui/material";
+import VisibilityOffIcon from "@mui/material/";
 import IconButton from "@mui/material/IconButton";
-import AyaponeLogo from '../assets/Logo PNG.png';
+import AyaponeLogo from '../../../assets/images/ayapone_logo.svg'
 
 const useStyles = makeStyles({
   paper: {
