@@ -12,7 +12,9 @@ const SignIn = () => {
 
   return (
     <div className='bg-ayaNeutral-100 h-auto min-h-screen w-full grid place-items-center text-ayaNeutral-900'>
-        <img src={AyaponeLogo} alt="logo" className='py-12 scale-150'/>
+        <Link to={routes.HOME_PAGE}>
+          <img src={AyaponeLogo} alt="logo" className='py-12 scale-150'/>
+        </Link>
 
         <div className='bg-white rounded-[36px] h-auto w-[508px] py-16 px-10 mb-14 shadow'>
           <div className="text-center mb-11">

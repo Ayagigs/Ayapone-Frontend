@@ -15,7 +15,9 @@ const SignUp = () => {
 
   return (
     <div className='bg-ayaNeutral-100 h-auto min-h-screen w-full grid place-items-center text-ayaNeutral-900'>
-        <img src={AyaponeLogo} alt="logo" className='py-12 scale-150'/>
+        <Link to={routes.HOME_PAGE}>
+          <img src={AyaponeLogo} alt="logo" className='py-12 scale-150'/>
+        </Link>
 
         <div className='bg-white rounded-[36px] h-auto w-[508px] py-16 px-10 mb-14 shadow'>
           <div className="text-center mb-10">
@@ -24,7 +26,7 @@ const SignUp = () => {
           </div>
 
           <ul data-te-stepper-init
-            class="relative m-0 flex list-none justify-between overflow-hidden p-0 transition-[height] duration-200 ease-in-out">
+            className="relative m-0 flex list-none justify-between overflow-hidden p-0 transition-[height] duration-200 ease-in-out">
             <StepOne />
             <StepTwo />
             <StepThree />
