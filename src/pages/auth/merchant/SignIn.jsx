@@ -36,7 +36,7 @@ const SignIn = () => {
           </button>
 
           <div className="text-center mt-10">
-            <span className="text-base">Don’t have an account? <Link to={routes.MERCHANT_SIGN_UP_PAGE} className='font-bold text-ayaPrimary-600'>Sign Up</Link></span>
+            <span className="text-base">Don’t have an account? <Link to={routes.MERCHANT_SIGN_UP_PAGE} className='font-bold text-ayaPrimary-600'>Sign Up as a Merchant</Link></span>
           </div>
         </div>
     </div>
