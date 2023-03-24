@@ -7,7 +7,7 @@ const InputBox = ({
   ...otherProps
 }) => {
   return (
-    <div className="font-notosans mt-6 ">
+    <div className="mt-6 ">
       <label className="text-sm text-ayaNeutral-900 font-normal mb-4" htmlFor={name}>
         {label}
         {isCompulsory && <span className="text-ayaDanger-200">*</span>}
