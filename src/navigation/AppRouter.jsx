@@ -9,6 +9,7 @@ import MerchantSignUpPage from '../pages/auth/merchant/SignUp'
 import HomePage from '../pages/HomePage'
 import DashboardPage from '../pages/dashboard/Dashboard'
 import PageNotFound from '../pages/PageNotFound'
+import TermsAndConditionPage from '../pages/TermsAndCondition'
 import useEnhancedCustomRouterUtilities from './useEnhancedCustomRouterUtilities'
 
 const AppRouter = () => {
@@ -22,6 +23,7 @@ const AppRouter = () => {
       <Route path={routes.BUYER_SIGN_UP_PAGE} element={<BuyerSignUpPage />} />
       <Route path={routes.MERCHANT_SIGN_IN_PAGE} element={<MerchantSignInPage />} />
       <Route path={routes.MERCHANT_SIGN_UP_PAGE} element={<MerchantSignUpPage />} />
+      <Route path={routes.TERMS_AND_CONDITION_PAGE} element={<TermsAndConditionPage />} />
 
       {/* TODO: PROTECT THESE ROUTES */}
       <Route path={routes.DASHBOARD_PAGE} element={<DashboardPage />} />
