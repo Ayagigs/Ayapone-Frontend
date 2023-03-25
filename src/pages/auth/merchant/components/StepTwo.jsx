@@ -1,5 +1,6 @@
 import InputBox from '../../../../components/forms/InputBox'
 import { HiArrowNarrowRight } from 'react-icons/hi'
+import { MdPhotoCameraBack } from 'react-icons/md'
 
 const StepTwo = () => {
   return (
@@ -42,19 +43,22 @@ const StepTwo = () => {
 
       <div className='text-sm mt-6'>
         <p className='font-bold pb-4'>File size must NOT exceed 512KB in jpg/jpeg/png</p>
-        <div className='grid place-items-center'>
-          <div className='flex items-center'>
-
+        <div className='flex items-center'>
+          <div className='flex items-center w-[154px] h-[118px] bg-ayaNeutral-100 border border-ayaNeutral-300 rounded-2xl'>
+            <MdPhotoCameraBack /><br/>
             Upload Front Page
           </div>
-          <div className='flex items-center'>
-
+          <div className='flex items-center w-[154px] h-[118px] bg-ayaNeutral-100 border border-ayaNeutral-300 rounded-2xl'>
+            <MdPhotoCameraBack /><br/>
             Upload Back Page
           </div>
         </div>
       </div>
       <button className='bg-ayaPrimary-600 font-bold rounded-[8px] mt-12 text-white w-[426px] h-[50px] flex space-x-2 justify-center items-center'>
         Next <HiArrowNarrowRight />
+      </button>
+      <button className='bg-ayaPrimary-100 font-bold rounded-[8px] mt-6 text-ayaPrimary-600 w-[426px] h-[50px] flex space-x-2 justify-center items-center border border-ayaPrimary-600/20'>
+        Return to previous
       </button>
     </>
   )
