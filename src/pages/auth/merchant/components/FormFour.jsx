@@ -1,6 +1,6 @@
 import InputBox from '../../../../components/forms/InputBox'
 
-const StepFour = () => {
+const FormFour = () => {
   return (
     <>
       <InputBox name={'wallet_address'} label={'Wallet Address'} isCompulsory={true} placeholder={'Wallet Address'} />
@@ -30,4 +30,4 @@ const StepFour = () => {
   )
 }
 
-export default StepFour
+export default FormFour

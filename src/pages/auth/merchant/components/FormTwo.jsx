@@ -2,7 +2,7 @@ import InputBox from '../../../../components/forms/InputBox'
 import { HiArrowNarrowRight } from 'react-icons/hi'
 import { MdPhotoCameraBack } from 'react-icons/md'
 
-const StepTwo = () => {
+const FormTwo = () => {
   return (
     <>
       <div className="flex flex-wrap -mx-3 mb-6">
@@ -64,4 +64,4 @@ const StepTwo = () => {
   )
 }
 
-export default StepTwo
+export default FormTwo

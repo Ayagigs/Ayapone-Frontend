@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import AyaponeLogo from '../../../assets/images/ayapone_logo.svg'
-import InputBox from '../../../components/forms/InputBox'
 import { Link } from 'react-router-dom'
 import routes from '../../../navigation/routes'
-import StepOne from './components/StepOne'
-import StepTwo from './components/StepTwo'
-import StepThree from './components/StepThree'
-import StepFour from './components/StepFour'
+import FormOne from './components/FormOne'
+import FormTwo from './components/FormTwo'
+import FormThree from './components/FormThree'
+import FormFour from './components/FormFour'
 import Stepper from "./components/Stepper";
 
 const SignUp = () => {
@@ -26,12 +25,12 @@ const SignUp = () => {
             <span className="text-base ">Create an account to sell on Ayapone</span>
           </div>
 
-          <Stepper />
+          <Stepper activeStep={1} />
 
-          <StepOne />
-          <StepTwo />
-          <StepThree />
-          <StepFour />
+          <FormOne />
+          <FormTwo />
+          <FormThree />
+          <FormFour />
 
           <div className="text-center mt-10">
             <span className="text-base">Already a Merchant? <Link to={routes.MERCHANT_SIGN_IN_PAGE} className='font-bold text-ayaPrimary-600'>Log In</Link></span>

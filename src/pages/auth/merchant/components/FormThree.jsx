@@ -1,7 +1,7 @@
 import InputBox from '../../../../components/forms/InputBox'
 import { HiArrowNarrowRight } from 'react-icons/hi'
 
-const StepThree = () => {
+const FormThree = () => {
   return (
     <>
       <InputBox name={'business_name'} label={'Business Name'} isCompulsory={true} placeholder={'Business Name'} />
@@ -54,4 +54,4 @@ const StepThree = () => {
   )
 }
 
-export default StepThree
+export default FormThree
