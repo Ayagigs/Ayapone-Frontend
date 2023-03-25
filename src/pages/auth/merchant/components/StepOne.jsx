@@ -14,7 +14,7 @@ const StepOne = () => {
         </div>
       </div>
 
-      <InputBox name={'email'} label={'Email Address'} isCompulsory={true} placeholder={'Email Address'} />
+      <InputBox name={'email'} label={'Email Address'} isCompulsory={true} type={'email'} placeholder={'Email Address'} />
       <InputBox name={'phone'} label={'Phone Number'} isCompulsory={true} placeholder={'Phone Number'} />
       <InputBox name={'password'} label={'Password'} isCompulsory={true} type={'password'} placeholder={'Password'} />
 

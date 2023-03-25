@@ -9,9 +9,9 @@ const StepTwo = () => {
         <div className="w-full md:w-1/2 px-3">
           <div className="mt-6 ">
             <label className="text-sm text-ayaNeutral-900 font-normal mb-4" htmlFor={'documenttype'}>
-              Select Document Type<span className="text-ayaDanger-200">*</span>
+              Document Type<span className="text-ayaDanger-200">*</span>
             </label>
-            <select id="documenttype" class="text-gray-900 focus:ring-blue-500 flex h-[54px] bg-white text-sm border rounded-lg border-ayaNeutral-600 w-full outline-none px-6 placeholder:text-ayaNeutral-500 placeholder:text-sm">
+            <select id="document_type" class="text-gray-900 focus:ring-blue-500 flex h-[54px] bg-white text-sm border rounded-lg border-ayaNeutral-600 w-full outline-none px-6 placeholder:text-ayaNeutral-500 placeholder:text-sm" name='document_type'>
               <option selected>Choose a Document Type</option>
               <option value="US">United States</option>
               <option value="CA">Canada</option>
