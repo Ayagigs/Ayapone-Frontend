@@ -16,7 +16,7 @@ const InputBox = ({
         {isCompulsory && <span className="text-ayaDanger-200">*</span>}
       </label>
       <input
-        className={`flex ${height} bg-white text-sm border rounded-[8px] border-ayaNeutral-600 ${width} outline-none px-6 placeholder:text-ayaNeutral-500 placeholder:text-sm ${style}`}
+        className={`flex ${height} bg-white text-sm border rounded-lg border-ayaNeutral-600 ${width} outline-none px-6 placeholder:text-ayaNeutral-500 placeholder:text-sm ${style}`}
         type={type}
         id={name}
         name={name}
