@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import AyaponeLogo from '../../../assets/images/ayapone_logo.svg'
 import { Link } from 'react-router-dom'
 import routes from '../../../navigation/routes'
@@ -6,12 +5,12 @@ import FormOne from './components/FormOne'
 import FormTwo from './components/FormTwo'
 import FormThree from './components/FormThree'
 import FormFour from './components/FormFour'
-import Stepper from "./components/Stepper";
+import Stepper from './components/Stepper'
+import { useMerchantSignupStore } from '../../../store/merchantSignupStore'
 
 const SignUp = () => {
-  const [showPassword, setShowPassword] = useState(false);
-  const handleClickShowPassword = () => setShowPassword(!showPassword);
-  const handleMouseDownPassword = () => setShowPassword(!showPassword);
+  const { activeStep } = useMerchantSignupStore()
+  console.log('logging...', activeStep);
 
   return (
     <div className='bg-ayaNeutral-100 h-auto min-h-screen w-full grid place-items-center text-ayaNeutral-900'>
@@ -25,12 +24,12 @@ const SignUp = () => {
             <span className="text-base ">Create an account to sell on Ayapone</span>
           </div>
 
-          <Stepper activeStep={1} />
+          <Stepper />
 
-          <FormOne />
-          <FormTwo />
-          <FormThree />
-          <FormFour />
+          {activeStep == 1 && <FormOne />}
+          {activeStep == 2 && <FormTwo />}
+          {activeStep == 3 && <FormThree />}
+          {activeStep == 4 && <FormFour />}
 
           <div className="text-center mt-10">
             <span className="text-base">Already a Merchant? <Link to={routes.MERCHANT_SIGN_IN_PAGE} className='font-bold text-ayaPrimary-600'>Log In</Link></span>

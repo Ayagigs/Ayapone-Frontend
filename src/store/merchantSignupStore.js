@@ -1,12 +1,13 @@
 import { create } from 'zustand'
 import { createJSONStorage, persist } from 'zustand/middleware'
+import { shallow } from "zustand/shallow"
 
 const merchantSignupStore = create(
   persist (
-    (set, get) => ({
-      history: [],
-      setHistory: (pathName) =>
-        set(() => ({ history: [...get().history, pathName] })),
+    (set) => ({
+      activeStep: 1,
+      setActiveStep: (step) =>
+        set(() => ({ activeStep: step })),
     }),
     {
       name: 'useMerchantSignupStore',
@@ -16,10 +17,12 @@ const merchantSignupStore = create(
 );
 
 export const useMerchantSignupStore = () => {
-  const store = merchantSignupStore(({ history, setHistory }) => ({
-    history,
-    setHistory,
-  }))
+  const store = merchantSignupStore(({ activeStep, setActiveStep }) => ({
+      activeStep,
+      setActiveStep,
+    }),
+    shallow
+  )
 
   return store
 };

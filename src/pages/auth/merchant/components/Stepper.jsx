@@ -1,6 +1,8 @@
 import Step from "./Step"
+import { useMerchantSignupStore } from '../../../../store/merchantSignupStore'
 
-const Stepper = ({ activeStep }) => {
+const Stepper = () => {
+  const { activeStep } = useMerchantSignupStore()
   return (
     <>
       <ol className="flex items-center w-full my-14">
