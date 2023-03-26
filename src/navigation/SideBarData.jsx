@@ -22,7 +22,7 @@ const sideBarData = [
   {
     icon: <MdOutlineShoppingCart />,
     title: 'Cart',
-    path: routes.DASHBOARD,
+    path: routes.CART_DASHBOARD_PAGE,
     for: ['buyer']
   },
   {

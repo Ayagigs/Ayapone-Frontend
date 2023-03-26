@@ -6,6 +6,7 @@ import AppLayout from '../pages/app/AppLayout'
 import BuyerDashboardPage from '../pages/app/buyer/Dashboard'
 import BuyerSignInPage from '../pages/auth/buyer/SignIn'
 import BuyerSignUpPage from '../pages/auth/buyer/SignUp'
+import CartDashboardPage from '../pages/app/buyer/Cart'
 import CreatePasswordPage from '../pages/auth/CreatePassword'
 import ForgotPasswordPage from '../pages/auth/ForgotPassword'
 import MerchantDashboardPage from '../pages/app/merchant/Dashboard'
@@ -36,6 +37,7 @@ const AppRouter = () => {
       {/* Buyer Only routes */}
       <Route path={'buyer'} element={<AppLayout />}>
         <Route path={routes.DASHBOARD_PAGE} element={<BuyerDashboardPage />} />
+        <Route path={routes.CART_DASHBOARD_PAGE} element={<CartDashboardPage />} />
 
       </Route>
 
