@@ -1,5 +1,5 @@
 
-const MerchantProducts = () => {
+const Products = () => {
   return (
     <main className='p-12'>
       Products page from AppLayout<br/><br/><br/><br/><br/>
@@ -14,4 +14,4 @@ const MerchantProducts = () => {
   );
 };
 
-export default MerchantProducts;
+export default Products;
