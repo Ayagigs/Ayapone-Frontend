@@ -10,7 +10,6 @@ import { useMerchantSignupStore } from '../../../store/merchantSignupStore'
 
 const SignUp = () => {
   const { activeStep } = useMerchantSignupStore()
-  console.log('logging...', activeStep);
 
   return (
     <div className='bg-ayaNeutral-100 h-auto min-h-screen w-full grid place-items-center text-ayaNeutral-900'>

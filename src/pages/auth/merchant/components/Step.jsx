@@ -8,6 +8,7 @@ const Step = ({
   isLast=false
 }) => {
   const { setActiveStep } = useMerchantSignupStore()
+  
   return (
     <>
       <li className='grid place-items-center' onClick={() => setActiveStep(index)}>
