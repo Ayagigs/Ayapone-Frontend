@@ -1,10 +1,10 @@
 import DashboardNavBar from '../../components/DashboardNavBar'
-import DashboardSideBar from '../../components/DashboardSideBar'
+import MerchantSideBarMenu from './components/MerchantSideBarMenu'
 
-const Dashboard = () => {
+const MerchantDashboard = () => {
   return (
     <main className="container bg-ayaNeutral-100 h-auto flex">
-        <DashboardSideBar />
+        <MerchantSideBarMenu />
         <DashboardNavBar pagename={'Dashboard'}/>
 
         <main className='p-12'>
@@ -22,4 +22,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default MerchantDashboard;
