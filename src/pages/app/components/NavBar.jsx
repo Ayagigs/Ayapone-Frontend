@@ -1,12 +1,12 @@
-import UserAvater from '../assets/images/user_avatar.svg'
+import UserAvater from '../../../assets/images/user_avatar.svg'
 
-const DashboardNavBar = ({
-  pagename
+const NavBar = ({
+  pageName
 }) => {
   return (
     <header className='ml-1'>
     <nav className="container flex bg-white rounded-bl-lg py-7 px-12 h-24 items-center fixed w-[calc(100vw-80px)] sm:w-[calc(100vw-16.5em)]">
-      <span className="text-2xl">{pagename}</span>
+      <span className="text-2xl">{pageName}</span>
       <ul className="hidden sm:flex ml-auto font-poppins text-base gap-x-6 items-center">
         <li>
           <img src={UserAvater} alt="User" srcset={UserAvater} />
@@ -25,4 +25,4 @@ const DashboardNavBar = ({
   )
 }
 
-export default DashboardNavBar
+export default NavBar
