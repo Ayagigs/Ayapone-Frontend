@@ -3,15 +3,16 @@ import { Route, Routes } from 'react-router-dom'
 import routes from './routes'
 import AdminSignInPage from '../pages/auth/admin/SignIn'
 import AppLayout from '../pages/app/AppLayout'
+import BuyerDashboardPage from '../pages/app/buyer/Dashboard'
 import BuyerSignInPage from '../pages/auth/buyer/SignIn'
 import BuyerSignUpPage from '../pages/auth/buyer/SignUp'
 import CreatePasswordPage from '../pages/auth/CreatePassword'
-import DashboardPage from '../pages/app/Dashboard'
 import ForgotPasswordPage from '../pages/auth/ForgotPassword'
+import MerchantDashboardPage from '../pages/app/merchant/Dashboard'
 import MerchantSignInPage from '../pages/auth/merchant/SignIn'
 import MerchantSignUpPage from '../pages/auth/merchant/SignUp'
 import HomePage from '../pages/HomePage'
-import MerchantProductsPage from '../pages/app/MerchantProducts'
+import MerchantProductsPage from '../pages/app/merchant/Products'
 import PageNotFound from '../pages/PageNotFound'
 import TermsAndConditionPage from '../pages/TermsAndCondition'
 import useEnhancedCustomRouterUtilities from './useEnhancedCustomRouterUtilities'
@@ -32,17 +33,15 @@ const AppRouter = () => {
       <Route path={routes.TERMS_AND_CONDITION_PAGE} element={<TermsAndConditionPage />} />
 
       {/* TODO: PROTECT THESE ROUTES */}
-      {/* <Route path={routes.MERCHANT_DASHBOARD_PAGE} element={<MerchantDashboardPage />} /> */}
-
       {/* Buyer Only routes */}
       <Route path={'buyer'} element={<AppLayout />}>
-        <Route path={routes.DASHBOARD_PAGE} element={<DashboardPage />} />
+        <Route path={routes.DASHBOARD_PAGE} element={<BuyerDashboardPage />} />
 
       </Route>
 
       {/* Merchant Only routes */}
       <Route path={'merchant'} element={<AppLayout />}>
-        <Route path={routes.DASHBOARD_PAGE} element={<DashboardPage />} />
+        <Route path={routes.DASHBOARD_PAGE} element={<MerchantDashboardPage />} />
         <Route path={routes.MERCHANT_PRODUCT_PAGE} element={<MerchantProductsPage />} />
 
       </Route>
