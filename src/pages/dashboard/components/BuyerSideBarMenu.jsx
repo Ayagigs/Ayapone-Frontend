@@ -17,7 +17,7 @@ const BuyerSideBarMenu = () => {
       </div>
       
       <ul className="ml-auto text-base items-center pt-10 space-y-2">
-        <li className='h-14 py-4 pl-6 rounded-lg bg-ayaPrimary-600 text-white hover:bg-ayaPrimary-200 flex items-center'>
+        <li className='h-14 py-4 pl-6 rounded-lg bg-ayaPrimary-600 text-white hover:bg-ayaPrimary-200 hover:text-ayaNeutral-900 flex items-center'>
           <RiLayout2Line /><span className='ml-4 '>Dashboard</span>
         </li>
         <li className='h-14 py-4 pl-6 rounded-lg hover:bg-ayaPrimary-200 flex items-center'>
