@@ -1,14 +1,13 @@
-import { useState } from 'react'
-import routes from '../navigation/routes'
+import routes from '../../../navigation/routes'
 import { Link } from 'react-router-dom'
-import Logo from '../assets/images/ayapone_logo.svg'
+import Logo from '../../../assets/images/ayapone_logo.svg'
 import { BiWallet } from 'react-icons/bi'
 import { RiLayout2Line, RiNotification3Line } from 'react-icons/ri'
 import { MdOutlineShoppingCart, MdTrackChanges } from 'react-icons/md'
 import { CgProfile } from 'react-icons/cg'
 import { TbLogout } from 'react-icons/tb'
 
-const DashboardSideBar = () => {
+const MerchantSideBarMenu = () => {
   return (
     <aside className="w-64 h-screen bg-white px-6 text-ayaNeutral-900 sticky top-0">
       <div className='py-7 pl-6'>
@@ -44,4 +43,4 @@ const DashboardSideBar = () => {
   )
 }
 
-export default DashboardSideBar
+export default MerchantSideBarMenu

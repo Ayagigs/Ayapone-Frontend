@@ -1,10 +1,12 @@
 import DashboardNavBar from '../../components/DashboardNavBar'
-import DashboardSideBar from '../../components/DashboardSideBar'
+import BuyerSideBarMenu from './components/BuyerSideBarMenu'
+import MerchantSideBarMenu from './components/MerchantSideBarMenu'
 
 const Dashboard = () => {
   return (
     <main className="container bg-ayaNeutral-100 h-auto flex">
-        <DashboardSideBar />
+        {/* <BuyerSideBarMenu /> */}
+        <MerchantSideBarMenu />
         <DashboardNavBar pagename={'Dashboard'}/>
 
         <main className='p-12'>
