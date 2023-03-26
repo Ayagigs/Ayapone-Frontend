@@ -1,7 +1,9 @@
 import routes from '../../../navigation/routes'
 import { Link } from 'react-router-dom'
 import { useLocation } from 'react-router';
+import SideBarData from '../../../navigation/SideBarData';
 import Logo from '../../../assets/images/ayapone_logo.svg'
+import { TbLogout } from 'react-icons/tb'
 
 const SideBarMenu = () => {
   const { pathname } = useLocation();
@@ -14,7 +16,7 @@ const SideBarMenu = () => {
       </div>
       
       <ul className="ml-auto text-base items-center pt-10 space-y-2">
-        {sideBarData.map((item, index) => {
+        {SideBarData.map((item, index) => {
           return pathname.includes(item.path) ? (
             <Link key={index} to={item.path}>
               <li className={`h-14 py-4 pl-6 rounded-lg flex items-center hover:bg-ayaNeutral-200 hover:text-ayaNeutral-900 bg-ayaNeutral-900 text-white`}>

@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 
 import SideBarData from '../../navigation/SideBarData';
 import SideBarMenu from './components/SideBarMenu';
+import NavBar from './components/NavBar';
 
 const AppLayout = () => {
   const [activeTabTitle, setActiveTabTitle] = useState('');
@@ -17,7 +18,7 @@ const AppLayout = () => {
   return (
     <main className="container bg-ayaNeutral-100 h-auto flex">
       <SideBarMenu />
-      <NavBar pagename={'Dashboard'}/>
+      <NavBar pageName={activeTabTitle}/>
 
       <main className='p-12'>
         <Outlet />

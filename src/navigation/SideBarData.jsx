@@ -1,4 +1,4 @@
-import routes from 'navigation/routes';
+import routes from './routes';
 import { BiWallet } from 'react-icons/bi'
 import { RiLayout2Line, RiNotification3Line } from 'react-icons/ri'
 import { CgProfile } from 'react-icons/cg'
@@ -16,7 +16,7 @@ const sideBarData = [
   {
     icon: <FiArchive />,
     title: 'Products',
-    path: routes.DASHBOARD,
+    path: routes.MERCHANT_PRODUCT_PAGE,
     for: ['merchant', 'admin']
   },
   {
