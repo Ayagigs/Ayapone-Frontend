@@ -10,7 +10,7 @@ const sideBarData = [
   {
     icon: <RiLayout2Line />,
     title: 'Dashboard',
-    path: routes.DASHBOARD,
+    path: routes.DASHBOARD_PAGE,
     for: ['buyer', 'merchant', 'admin']
   },
   {
@@ -28,31 +28,31 @@ const sideBarData = [
   {
     icon: <SlCalender />,
     title: 'Orders',
-    path: routes.DASHBOARD,
+    path: routes.DASHBOARD_PAGE,
     for: ['merchant', 'admin']
   },
   {
     icon: <MdTrackChanges />,
     title: 'Track Order',
-    path: routes.DASHBOARD,
+    path: routes.DASHBOARD_PAGE,
     for: ['buyer']
   },
   {
     icon: <BiWallet />,
     title: 'Wallet',
-    path: routes.DASHBOARD,
+    path: routes.WALLET_PAGE,
     for: ['buyer', 'merchant', 'admin']
   },
   {
     icon: <CgProfile />,
     title: 'Profile',
-    path: routes.DASHBOARD,
+    path: routes.DASHBOARD_PAGE,
     for: ['buyer', 'merchant', 'admin']
   },
   {
     icon: <RiNotification3Line />,
     title: 'Notifications',
-    path: routes.DASHBOARD,
+    path: routes.DASHBOARD_PAGE,
     for: ['buyer', 'merchant', 'admin']
   },
 ];

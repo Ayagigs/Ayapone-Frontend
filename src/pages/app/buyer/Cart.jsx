@@ -2,7 +2,7 @@ import image from '../../../assets/images/cart_oraimo.png'
 import Ayp from '../../../assets/icons/ayp.svg'
 import CartItem from './components/CartItem'
 
-const BuyerDashboard = () => {
+const Cart = () => {
   return (
     <main className='p-11 mt-12'>
       <div className='flex flex-wrap gap-4 mt-6'>
@@ -64,4 +64,4 @@ const BuyerDashboard = () => {
   );
 };
 
-export default BuyerDashboard;
+export default Cart;

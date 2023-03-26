@@ -11,4 +11,5 @@ export default Object.freeze({
   MERCHANT_SIGN_IN_PAGE: '/merchant/signin',
   MERCHANT_SIGN_UP_PAGE: '/merchant/signup',
   TERMS_AND_CONDITION_PAGE: '/terms-and-condition',
+  WALLET_PAGE: 'wallet'
 })
