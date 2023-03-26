@@ -1,6 +1,6 @@
-import UserAvater from '../assets/images/user_avatar.svg'
+import UserAvater from '../../../assets/images/user_avatar.svg'
 
-const DashboardNavBar = ({
+const NavBar = ({
   pagename
 }) => {
   return (
@@ -25,4 +25,4 @@ const DashboardNavBar = ({
   )
 }
 
-export default DashboardNavBar
+export default NavBar
