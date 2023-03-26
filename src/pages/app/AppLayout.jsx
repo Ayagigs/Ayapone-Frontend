@@ -16,7 +16,7 @@ const AppLayout = () => {
   }, [pathname]);
 
   return (
-    <main className="container bg-ayaNeutral-100 h-auto flex">
+    <main className="container bg-ayaNeutral-100 text-ayaNeutral-900 h-auto flex">
       <SideBarMenu />
       <NavBar pageName={activeTabTitle}/>
 

@@ -13,7 +13,7 @@ const MerchantSideBarMenu = () => {
     <aside className="w-64 h-screen bg-white px-6 text-ayaNeutral-900 sticky top-0">
       <div className='py-7 pl-6'>
         <Link to={routes.HOME_PAGE}>
-          <img src={Logo} alt="Ayapone" srcset={Logo} />
+          <img src={Logo} alt="Ayapone" srcSet={Logo} />
         </Link>
       </div>
       

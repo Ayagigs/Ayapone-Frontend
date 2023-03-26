@@ -39,6 +39,9 @@ module.exports = {
         'ayaDanger-200': '#E91010',
         'ayaDanger-100': '#FFF2F2',
       },
+      boxShadow: {
+        '8': '0px 2px 12px rgba(72, 60, 49, 0.08)',
+      },
     },
   },
   plugins: [],
