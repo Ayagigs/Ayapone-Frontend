@@ -3,6 +3,9 @@ const InputBox = ({
   name,
   label,
   isCompulsory,
+  width = 'w-[426px]',
+  height = 'h-[54px]',
+  style = '',
   type = 'text',
   ...otherProps
 }) => {
@@ -13,7 +16,7 @@ const InputBox = ({
         {isCompulsory && <span className="text-ayaDanger-200">*</span>}
       </label>
       <input
-        className="flex h-[54px] bg-white text-sm border rounded-[8px] border-ayaNeutral-600 w-[426px] outline-none px-6 placeholder:text-ayaNeutral-500 placeholder:text-sm "
+        className={`flex ${height} bg-white text-sm border rounded-lg border-ayaNeutral-600 ${width} outline-none px-6 placeholder:text-ayaNeutral-500 placeholder:text-sm ${style}`}
         type={type}
         id={name}
         name={name}
