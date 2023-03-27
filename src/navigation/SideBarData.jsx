@@ -34,7 +34,7 @@ const sideBarData = [
   {
     icon: <MdTrackChanges />,
     title: 'Track Order',
-    path: routes.DASHBOARD_PAGE,
+    path: routes.TRACK_ORDER_PAGE,
     for: ['buyer']
   },
   {
@@ -46,13 +46,13 @@ const sideBarData = [
   {
     icon: <CgProfile />,
     title: 'Profile',
-    path: routes.DASHBOARD_PAGE,
+    path: routes.PROFILE_PAGE,
     for: ['buyer', 'merchant', 'admin']
   },
   {
     icon: <RiNotification3Line />,
     title: 'Notifications',
-    path: routes.DASHBOARD_PAGE,
+    path: routes.NOTIFICATION_PAGE,
     for: ['buyer', 'merchant', 'admin']
   },
 ];
