@@ -1,19 +1,20 @@
-import { MdCheckCircleOutline } from 'react-icons/md'
 
 const RecentTransactionItem = ({
-  isCompleted=false,
   reason,
-  points
+  amount,
+  date,
+  statusColor
 }) => {
   return (
-    <li className='border-b border-b-ayaNeutral-200 font-normal text-base flex item-center py-6 justify-between'>
+    <li className='border-b border-b-ayaNeutral-200 font-normal text-base flex item-center py-4 justify-between'>
       <div className='flex item-center gap-4'>
-        <span>
-          <MdCheckCircleOutline className={`w-6 h-6 rounded-full text-white border-none ${isCompleted ? 'bg-ayaPrimary-600' : 'bg-ayaNeutral-500'} `}/>
-        </span>
-        <p>{reason}</p>
+        <span className={`w-2 h-2 rounded-full ${statusColor}`}></span>
+        <div>
+          <p>{reason}</p>
+          <p className='font-medium text-xs'>{date}</p>
+        </div>
       </div>
-      <span>{points}</span>
+      <span>{amount}</span>
     </li>
   )
 }

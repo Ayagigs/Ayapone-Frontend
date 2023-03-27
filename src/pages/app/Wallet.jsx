@@ -1,26 +1,27 @@
-// import image from '../../../assets/images/cart_oraimo.png'
 import Ayp from '../../assets/icons/ayp.svg'
 import AypActivityItem from './components/wallet/AypActivityItem'
 import RecentTransactionItem from './components/wallet/RecentTransactionItem'
+import { BiPlus } from 'react-icons/bi'
 
 const Wallet = () => {
   return (
     <main className='p-11 mt-12'>
       <div className='flex flex-wrap gap-3 mt-6'>
-        <div className='w-[624px] flex-col'>
-          <div className='bg-white shadow-8 rounded-lg h-[136px] p-6 flex flex-col'>
-            <h3 className={`font-medium text-base text-ayaNeutral-600`}>
-              Order Summary
-            </h3>
-            <div className='h-full grid flex-col mt-4 content-between'>
-              <div className='flex flex-col'>
-                <div className='flex items-center justify-between'>
-                  <div>Subtotal</div>
-                  <div className='flex items-center gap-2'>
-                    <img src={Ayp} alt="" className='h-[18px] w-[18px]' />26.49
-                  </div>
-                </div>
+        <div className='w-[624px] flex-wrap'>
+          <div className='font-normal text-base flex item-center py-4 justify-between bg-white shadow-8 rounded-lg h-[136px] p-6 flex-col flex-wrap w-full'>
+            <div className='flex item-center gap-4'>
+              <img src={Ayp} alt="" />
+              <div>
+                <p><span className='font-medium text-4xl'>57</span>AYP</p>
+                <p className='font-medium text-xs'>Total Balance</p>
               </div>
+            </div>
+            <div className='flex item-right'>
+              <button
+                className='bg-ayaPrimary-600 font-semibold rounded-[8px] text-white w-[186px] h-[50px] flex justify-center items-center'
+              >
+                <BiPlus /> Fund Wallet
+              </button>
             </div>
           </div>
 
@@ -29,7 +30,7 @@ const Wallet = () => {
               {`Ayapone Activity`}
             </h3>
             <div className='w-full flex flex-wrap'>
-              <ul className='list-non w-full'>
+              <ul className='w-full'>
                 <AypActivityItem isCompleted={true} reason={'Create an Ayapone Account'} points={'10 AYP'} />
                 <AypActivityItem isCompleted={true} reason={'Verify Ayapone Account'} points={'20 AYP'} />
                 <AypActivityItem isCompleted={true} reason={'Place your first order'} points={'50 AYP'} />
@@ -49,8 +50,14 @@ const Wallet = () => {
             {`Recent Transactions`}
           </h3>
           <div className='w-full flex flex-wrap'>
-            <ul className='list-non w-full'>
-              <RecentTransactionItem isCompleted={true} reason={'Create an Ayapone Account'} points={'10 AYP'} />
+            <ul className='w-full'>
+              <RecentTransactionItem reason={'Oraimo Freepods 3'} amount={'150 AYP'} date={'22nd Feb, 2023'} statusColor={'bg-ayaSuccess-200'} />
+              <RecentTransactionItem reason={'Oraimo Freepods 3'} amount={'150 AYP'} date={'22nd Feb, 2023'} statusColor={'bg-ayaSuccess-200'} />
+              <RecentTransactionItem reason={'Oraimo Freepods 3'} amount={'150 AYP'} date={'22nd Feb, 2023'} statusColor={'bg-ayaSuccess-200'} />
+              <RecentTransactionItem reason={'Macbook Pro 2022'} amount={'25,467 AYP'} date={'22nd Feb, 2023'} statusColor={'bg-ayaDanger-200'} />
+              <RecentTransactionItem reason={'Oraimo Freepods 3'} amount={'150 AYP'} date={'22nd Feb, 2023'} statusColor={'bg-ayaSuccess-200'} />
+              <RecentTransactionItem reason={'Macbook Pro 2022'} amount={'25,467 AYP'} date={'22nd Feb, 2023'} statusColor={'bg-ayaDanger-200'} />
+              <RecentTransactionItem reason={'Oraimo Freepods 3'} amount={'150 AYP'} date={'22nd Feb, 2023'} statusColor={'bg-ayaSuccess-200'} />
             </ul>
           </div>
         </div>
