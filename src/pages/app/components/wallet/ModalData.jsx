@@ -6,6 +6,8 @@ const ModalData = ({
   closeModal
 }) => {
   const [qrIsOpen, setQrOpen] = useState(true)
+  const [copied, setCopied] = useState(false)
+  const walletAddress = '0x9693Ga0jks33453bj34bH3d3djk3k4r333F2e'
   
   return (
     <div className="px-11 py-1 flex flex-col">
@@ -27,12 +29,18 @@ const ModalData = ({
         </div>
       :
         <div className='pt-12 text-center flex flex-col item-center'>
-          <p className='p-4 w-[378px] h-14 border border-ayaPrimary-600 rounded-lg'>0x9693Ga0jks33453bj34bH3d3djk3k4r333F2e</p>
-          <button
-            className='bg-ayaPrimary-600 font-semibold rounded-[8px] text-white w-[104px] h-[50px] flex justify-center items-center mt-6'
+          <p className='p-4 w-[378px] h-14 border border-ayaPrimary-600 rounded-lg'>{walletAddress}</p>
+          <CopyToClipboard
+            text={walletAddress}
+            onCopy={() => setCopied(true)}
           >
-            Copy
-          </button>
+            <button
+              className='bg-ayaPrimary-600 font-semibold rounded-[8px] text-white w-[104px] h-[50px] flex justify-center items-center mt-6'
+            >
+              Copy
+            </button>
+          </CopyToClipboard>
+          {copied && <span style={{color: 'red'}}>Copied.</span>}
           <p className='pt-10 pb-3'>Copy the wallet address and (other information goes here)</p>
         </div>
       }
