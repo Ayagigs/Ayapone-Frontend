@@ -1,11 +1,13 @@
 import { Route, Routes } from 'react-router-dom'
 
 import routes from './routes'
+
 import AdminSignInPage from '../pages/auth/admin/SignIn'
 import AppLayout from '../pages/app/AppLayout'
 import BuyerDashboardPage from '../pages/app/buyer/Dashboard'
 import BuyerSignInPage from '../pages/auth/buyer/SignIn'
 import BuyerSignUpPage from '../pages/auth/buyer/SignUp'
+import CartDashboardPage from '../pages/app/buyer/Cart'
 import CreatePasswordPage from '../pages/auth/CreatePassword'
 import ForgotPasswordPage from '../pages/auth/ForgotPassword'
 import MerchantDashboardPage from '../pages/app/merchant/Dashboard'
@@ -15,6 +17,8 @@ import HomePage from '../pages/HomePage'
 import MerchantProductsPage from '../pages/app/merchant/Products'
 import PageNotFound from '../pages/PageNotFound'
 import TermsAndConditionPage from '../pages/TermsAndCondition'
+import WalletPage from '../pages/app/Wallet'
+
 import useEnhancedCustomRouterUtilities from './useEnhancedCustomRouterUtilities'
 
 const AppRouter = () => {
@@ -36,6 +40,8 @@ const AppRouter = () => {
       {/* Buyer Only routes */}
       <Route path={'buyer'} element={<AppLayout />}>
         <Route path={routes.DASHBOARD_PAGE} element={<BuyerDashboardPage />} />
+        <Route path={routes.CART_DASHBOARD_PAGE} element={<CartDashboardPage />} />
+        <Route path={routes.WALLET_PAGE} element={<WalletPage />} />
 
       </Route>
 
@@ -43,6 +49,7 @@ const AppRouter = () => {
       <Route path={'merchant'} element={<AppLayout />}>
         <Route path={routes.DASHBOARD_PAGE} element={<MerchantDashboardPage />} />
         <Route path={routes.MERCHANT_PRODUCT_PAGE} element={<MerchantProductsPage />} />
+        <Route path={routes.WALLET_PAGE} element={<WalletPage />} />
 
       </Route>
 

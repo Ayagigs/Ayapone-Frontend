@@ -9,7 +9,7 @@ const NavBar = ({
       <span className="text-2xl">{pageName}</span>
       <ul className="hidden sm:flex ml-auto font-poppins text-base gap-x-6 items-center">
         <li>
-          <img src={UserAvater} alt="User" srcset={UserAvater} />
+          <img src={UserAvater} alt="User" srcSet={UserAvater} />
         </li>
         <li>
           <input
