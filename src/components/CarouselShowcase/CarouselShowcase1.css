@@ -1,0 +1,46 @@
+.carousel-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    color: #000000;
+    /* margin-left: 100px;
+    margin-bottom: 200px; */
+    margin-top: 30px;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    background: #FBFAF9;
+}
+
+
+.carousel-header div p {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 46px;
+    letter-spacing: 0.0025em;
+    color: #917D6B;
+}
+
+.shop-now-btn {
+    width: 144px;
+    height: 50px;
+    left: 93px;
+    top: 314px;
+    background: #FF7417;
+    border-radius: 8px;
+}
+
+.add-to-cart-btn {
+    width: 155px;
+    height: 50px;
+    left: 261px;
+    top: 314px;
+    background: #FFF6F0;
+    border: 1px solid rgba(255, 116, 23, 0.2);
+    border-radius: 8px;
+    color: #FF7417;
+    margin-left: 20px;
+}
