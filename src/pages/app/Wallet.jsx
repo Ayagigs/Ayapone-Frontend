@@ -1,5 +1,7 @@
 // import image from '../../../assets/images/cart_oraimo.png'
 import Ayp from '../../assets/icons/ayp.svg'
+import AypActivityItem from './components/wallet/AypActivityItem'
+import RecentTransactionItem from './components/wallet/RecentTransactionItem'
 
 const Wallet = () => {
   return (
@@ -22,12 +24,18 @@ const Wallet = () => {
             </div>
           </div>
 
-          <div className='mt-5 bg-white shadow-8 rounded-lg h-64 p-6 flex flex-col'>
+          <div className='mt-5 bg-white shadow-8 rounded-lg h-auto p-6 flex flex-col'>
             <h3 className={`font-medium text-base text-ayaNeutral-600`}>
               {`Ayapone Activity`}
             </h3>
             <div className='w-full flex flex-wrap'>
-              {/* <CartItem name={'Oraimo Freepods 3'} image={image} color={'Black'} quantity={2} price={26.49} /> */}
+              <ul className='list-non w-full'>
+                <AypActivityItem isCompleted={true} reason={'Create an Ayapone Account'} points={'10 AYP'} />
+                <AypActivityItem isCompleted={true} reason={'Verify Ayapone Account'} points={'20 AYP'} />
+                <AypActivityItem isCompleted={true} reason={'Place your first order'} points={'50 AYP'} />
+                <AypActivityItem isCompleted={true} reason={'Fund your Ayapone Wallet'} points={'7 AYP'} />
+                <AypActivityItem reason={'Purchase over 2000 USDT worth of items'} points={'200 AYP'} />
+              </ul>
             </div>
             {/* <button
               className='bg-ayaPrimary-600 font-bold rounded-[8px] mt-12 text-white w-[344px] h-[50px] flex space-x-2 justify-center items-center'
@@ -41,7 +49,9 @@ const Wallet = () => {
             {`Recent Transactions`}
           </h3>
           <div className='w-full flex flex-wrap'>
-            {/* <CartItem name={'Oraimo Freepods 3'} image={image} color={'Black'} quantity={2} price={26.49} /> */}
+            <ul className='list-non w-full'>
+              <RecentTransactionItem isCompleted={true} reason={'Create an Ayapone Account'} points={'10 AYP'} />
+            </ul>
           </div>
         </div>
       </div>
