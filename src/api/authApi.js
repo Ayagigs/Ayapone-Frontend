@@ -1,21 +1,22 @@
-import {baseApi} from './base.api';
+import { baseApi } from './baseApi';
 
-const AuthURL = '/auth';
+const AuthPath = '/auth';
 
-export const RequestSignUpOTP = async (data) =>
-  await baseApi.post(AuthURL + '/request-signup-otpup', data)
+export const LocalSignIn = async (data) =>
+  await baseApi.post(`${AuthPath}/login`, data)
 
-export const VerifyOTP = async (data) =>
-  await baseApi.post(AuthURL + '/verify-otp', data)
+export const LocalSignUp = async (data) =>
+  await baseApi.post(`${AuthPath}/register`, data)
 
-export const SignUp = async (data) =>
-  await baseApi.post(AuthURL + '/signup', data)
+export const VerifyEmail = async (data) =>
+  await baseApi.post(`${AuthPath}/verify`, data)
 
-export const LogIn = async (data) =>
-  await baseApi.post(AuthURL + '/login', data)
-
-export const RequestPasswordOTP = async (data) =>
-  await baseApi.post(AuthURL + '/reset-password-otp', data)
+export const RequestPasswordReset = async (data) =>
+  await baseApi.post(`${AuthPath}/reset-password-reset`, data)
 
 export const ResetPassword = async (data) =>
-  await baseApi.post(AuthURL + '/reset-password', data)
+  await baseApi.post(`${AuthPath}/reset-password`, data)
+
+export const RegenerateJwt = async (data) =>
+  await baseApi.post(`${AuthPath}/regenerate-token`, data)
+
