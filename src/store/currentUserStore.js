@@ -6,7 +6,9 @@ const currentUserStore = create(
   persist(
     (set, get) => ({
       token: '',
+      user_role: '',
       setToken: (token) => set(() => ({ token: token })),
+      setUserRole: (role) => set(() => ({ user_role: role })),
     }),
     {
       name: 'currentUserStore',
@@ -17,9 +19,11 @@ const currentUserStore = create(
 
 export const useCurrentUserStore = () => {
   const store = currentUserStore(
-    ({ token, setToken }) => ({
+    ({ token, user_role, setToken, setUserRole }) => ({
       token,
+      user_role,
       setToken,
+      setUserRole
     }),
     shallow,
   )
