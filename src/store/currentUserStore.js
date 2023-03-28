@@ -6,9 +6,11 @@ const currentUserStore = create(
   persist(
     (set, get) => ({
       token: '',
-      user_role: '',
+      user: {},
+      wallet: {},
       setToken: (token) => set(() => ({ token: token })),
-      setUserRole: (role) => set(() => ({ user_role: role })),
+      setUser: (user) => set(() => ({ user: user })),
+      setWallet: (wallet) => set(() => ({ wallet: wallet })),
     }),
     {
       name: 'currentUserStore',
@@ -19,11 +21,13 @@ const currentUserStore = create(
 
 export const useCurrentUserStore = () => {
   const store = currentUserStore(
-    ({ token, user_role, setToken, setUserRole }) => ({
+    ({ token, user, wallet, setToken, setUser, setWallet }) => ({
       token,
-      user_role,
+      user,
+      wallet,
       setToken,
-      setUserRole
+      setUser,
+      setWallet,
     }),
     shallow,
   )
