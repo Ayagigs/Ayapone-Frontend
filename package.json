@@ -23,6 +23,7 @@
     "react-icons": "^4.8.0",
     "react-modal": "^3.16.1",
     "react-router-dom": "^6.9.0",
+    "react-toastify": "^9.1.2",
     "recharts": "^2.5.0",
     "zustand": "^4.3.6"
   },
