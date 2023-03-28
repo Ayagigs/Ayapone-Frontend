@@ -4,6 +4,7 @@ import InputBox from '../../../components/forms/InputBox'
 import { Link } from 'react-router-dom'
 import routes from '../../../navigation/routes'
 import { useBuyerSignupFormStore } from '../../../store/buyerSignupFormStore'
+import { useCurrentUserStore } from '../../../store/currentUserStore'
 import { LocalSignUp } from '../../../api/authApi'
 import { useMutation } from '@tanstack/react-query'
 import { toast } from 'react-toastify';
@@ -19,11 +20,19 @@ const SignUp = () => {
     console.log('....submitting')
     try {
       const response = await login.mutateAsync({first_name, last_name, email, phone, password});
-      if (response.ok) {
+      if (response) {
         console.log(response)
-        // toast(response.data.message)
-        toast("Account created Successfully!")
+        if (response.ok) {
+          const {setToken} = useCurrentUserStore()
+          setToken(response.data.token)
+          toast.success(response.data.message)
+          // show otp screen
+        } else {
+          toast.error(response.data.message)
+          console.log('if error is: ', response.data.message)
+        }
       }
+
       // if (verifyResponse(response)) {
       //   setToast({
       //     type: 'success',
@@ -42,7 +51,7 @@ const SignUp = () => {
       //   type: 'error',
       //   message: formatError(error),
       // });
-      console.log(error);
+      console.log('error is: ', error);
     }
 
   }
