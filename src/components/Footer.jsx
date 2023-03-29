@@ -1,13 +1,15 @@
-import { MdOutlineShoppingCart } from 'react-icons/md'
 import AyoponeWhiteLogo from '../assets/images/ayapone_logo_white.svg'
+import fb from '../assets/icons/fb.svg'
+import ig from '../assets/icons/ig.svg'
+import tw from '../assets/icons/tw.svg'
 import routes from '../navigation/routes'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
     <footer className='bg-ayaNeutral-900 text-white px-24 py-14 space-y-20'>
-      <div className='flex flex-wrap'>
-        <div className='space-y-4'>
+      <div className='flex flex-wrap space-x-[144px] '>
+        <div className='space-y-4 '>
           <img src={AyoponeWhiteLogo} alt="" />
           <p>
             Stay Updated! Subscribe to our newsletter
@@ -25,14 +27,35 @@ const Footer = () => {
             </button>
           </span>
         </div>
-        <div>
-          
+        <div className='space-y-10'>
+          <h1 className='font-semibold text-lg'>About Ayapone</h1>
+          <ul className='space-y-1'>
+            <li>About Us</li>
+            <li>Contact Us</li>
+            <li>
+              <Link to={routes.MERCHANT_SIGN_IN_PAGE}>Sell on Ayapone</Link>
+            </li>
+            <li>Privacy Policy</li>
+            <li>
+              <Link to={routes.TERMS_AND_CONDITION_PAGE}>Terms and Conditions</Link>
+            </li>
+          </ul>
         </div>
-        <div>
-          
+        <div className='space-y-10'>
+          <h1 className='font-semibold text-lg'>Categories</h1>
+          <ul className='space-y-1'>
+            <li>Phones & Tablets</li>
+            <li>Laptops</li>
+            <li>Accessories</li>
+          </ul>
         </div>
-        <div>
-          
+        <div className='space-y-3'>
+          <h1 className='font-semibold text-lg'>Connect With Us</h1>
+          <div className='flex flex-wrap space-x-2'>
+            <img src={fb} alt="" className='h-9 w-9' />
+            <img src={ig} alt="" className='h-9 w-9' />
+            <img src={tw} alt="" className='h-9 w-9' />
+          </div>
         </div>
       </div>
       <div className='text-center w-full'>
