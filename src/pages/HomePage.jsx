@@ -7,6 +7,7 @@ import CategoryCard from '../components/home/CategoryCard'
 import Brands from '../components/home/Brands'
 import ProductItem from '../components/home/ProductItem'
 import SponsoredProductItem from '../components/home/SponsoredProductItem'
+import Footer from '../components/Footer'
 
 import phoneCat from '../assets/images/products/design_startframe.svg'
 import headset from '../assets/images/products/headset.svg'
@@ -153,9 +154,7 @@ const HomePage = () => {
           <Brands />
         </section>
       </main>
-      <footer>
-        
-      </footer>
+      <Footer />
     </>
   );
 };
