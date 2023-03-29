@@ -1,12 +1,10 @@
 import { Link } from 'react-router-dom'
 import routes from '../navigation/routes'
-import NavBar from '../components/NavBar'
-import Carousel from 'react-multi-carousel'
-import SlideOne from '../components/home/SlideOne'
 import CategoryCard from '../components/home/CategoryCard'
 import Brands from '../components/home/Brands'
 import ProductItem from '../components/home/ProductItem'
 import SponsoredProductItem from '../components/home/SponsoredProductItem'
+import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 import phoneCat from '../assets/images/products/design_startframe.svg'
@@ -20,38 +18,9 @@ import oraimoTypeC from '../assets/images/products/oraimo_type_c.svg'
 
 
 const HomePage = () => {
-  const responsive = {
-    allBreakPoints: {
-      breakpoint: { max: 40000, min: 0 },
-      items: 1,
-    },
-  }
-
-  const options = {
-    autoPlay: true,
-    rewind: true,
-    rewindWithAnimation: true,
-    swipeable: true,
-    draggable: true,
-    showDots: true,
-    arrows: false,
-    responsive,
-    children: null,
-    autoPlaySpeed: 6000,
-  }
-
   return (
     <>
-      <header className=''>
-        <NavBar />
-        <section className='min-h-[550px] pt-12 px-24 select-none bg-ayaNeutral-100'>
-          <Carousel {...options}>
-            <SlideOne />
-            <SlideOne />
-            <SlideOne />
-          </Carousel>
-        </section>
-      </header>
+      <Header />
       <main>
         <section className='py-[90px] px-24 flex flex-row w-full justify-center space-x-6'>
           <CategoryCard text={'Phones & Tablets'} bgColor={'ayaPrimary-100'} image={phoneCat} />
