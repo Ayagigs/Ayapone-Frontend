@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import AyaponeLogo from '../../../assets/images/ayapone_logo.svg'
 import InputBox from '../../../components/forms/InputBox'
+import Otp from '../components/Otp'
 import { Link } from 'react-router-dom'
 import routes from '../../../navigation/routes'
 import { useBuyerSignupFormStore } from '../../../store/buyerSignupFormStore'
 import { useCurrentUserStore } from '../../../store/currentUserStore'
 import { LocalSignUp } from '../../../api/authApi'
 import { useMutation } from '@tanstack/react-query'
-import { toast } from 'react-toastify';
+import { toast } from 'react-toastify'
 
 const SignUp = () => {
   const [showOtp, setShowOtp] = useState(false);
@@ -16,11 +17,11 @@ const SignUp = () => {
   const handleMouseDownPassword = () => setShowPassword(!showPassword);
   const { first_name, last_name, email, phone, password, setLastName, setFirstName, setEmail, setPhone, setPassword } = useBuyerSignupFormStore()
   const { setToken, setUser, setWallet } = useCurrentUserStore()
-  const login = useMutation((userData) => LocalSignUp(userData));
+  const signup = useMutation((userData) => LocalSignUp(userData))
 
   const handleSubmit = async () => {
     try {
-      const response = await login.mutateAsync({first_name, last_name, email, phone, password});
+      const response = await signup.mutateAsync({first_name, last_name, email, phone, password})
       if (response) {
         console.log(response)
         if (response.ok) {
@@ -51,7 +52,7 @@ const SignUp = () => {
         <img src={AyaponeLogo} alt="logo" className='py-12 scale-150'/>
       </Link>
       
-      { !showOtp &&
+      { !showOtp ?
         <div className='bg-white rounded-[36px] h-auto w-[508px] py-16 px-10 mb-14 shadow'>
           <div className="text-center mb-10">
             <span className="font-bold text-2xl ">Sign Up</span><br />
@@ -59,10 +60,10 @@ const SignUp = () => {
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full md:w-1/2 px-3">
-              <InputBox name={'last_name'} width={'w-full'} label={'Last Name'} isCompulsory={true} placeholder={'Last Name'} onChange={(e) => setLastName(e.target.value)} />
+              <InputBox name={'first_name'} width={'w-full'} label={'First Name'} isCompulsory={true} placeholder={'First Name'} onChange={(e) => setFirstName(e.target.value)} />
             </div>
             <div className="w-full md:w-1/2 px-3">
-              <InputBox name={'first_name'} width={'w-full'} label={'First Name'} isCompulsory={true} placeholder={'First Name'} onChange={(e) => setFirstName(e.target.value)} />
+              <InputBox name={'last_name'} width={'w-full'} label={'Last Name'} isCompulsory={true} placeholder={'Last Name'} onChange={(e) => setLastName(e.target.value)} />
             </div>
           </div>
           <InputBox name={'email'} label={'Email Address'} isCompulsory={true} placeholder={'Enter Email Address'} onChange={(e) => setEmail(e.target.value)} />
@@ -82,6 +83,8 @@ const SignUp = () => {
             <div className="text-base pt-6">By signing up you accept our <Link to={routes.TERMS_AND_CONDITION_PAGE} className='text-ayaPrimary-600'>terms and condition & private policy</Link></div>
           </div>
         </div>
+        :
+        <Otp />
       }
     </div>
   );
