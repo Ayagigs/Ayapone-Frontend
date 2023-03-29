@@ -5,11 +5,14 @@ import Carousel from 'react-multi-carousel'
 import SlideOne from '../components/home/SlideOne'
 import CategoryCard from '../components/home/CategoryCard'
 import Brands from '../components/home/Brands'
+import ProductItem from '../components/home/ProductItem'
 
 import phoneCat from '../assets/images/products/design_startframe.svg'
 import headset from '../assets/images/products/headset.svg'
 import laptop from '../assets/images/products/laptop.svg'
 import watches from '../assets/images/products/watches.svg'
+import samsungUltra from '../assets/images/products/samsung_s23_ultra.svg'
+import mx2Mouse from '../assets/images/products/mx2_mouse.svg'
 
 
 const HomePage = () => {
@@ -108,10 +111,27 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className='py-[90px] px-24 flex flex-row w-full space-x-6'>
-        <h1 className='font-semibold text-[32px] text-left'>Trending Products</h1>
-        <div className='justify-center'>
-
+      <section className='py-[90px] flex flex-col w-full space-y-5'>
+        <h1 className='font-semibold px-24 text-[32px] text-left'>Trending Products</h1>
+        <div className='flex flex-wrap justify-center'>
+          <ProductItem productName={'Samsung S23 Ultra'} image={samsungUltra} price={'1642.4'} />
+          <ProductItem productName={'Logitech MX2 Mo...'} image={mx2Mouse} price={'1642.4'} />
+          <ProductItem productName={'Samsung S23 Ultra'} image={samsungUltra} price={'1642.4'} />
+          <ProductItem productName={'Logitech MX2 Mo...'} image={mx2Mouse} price={'1642.4'} />
+          <ProductItem productName={'Samsung S23 Ultra'} image={samsungUltra} price={'1642.4'} />
+          <ProductItem productName={'Logitech MX2 Mo...'} image={mx2Mouse} price={'1642.4'} />
+          <ProductItem productName={'Samsung S23 Ultra'} image={samsungUltra} price={'1642.4'} />
+          <ProductItem productName={'Logitech MX2 Mo...'} image={mx2Mouse} price={'1642.4'} />
+          <ProductItem productName={'Samsung S23 Ultra'} image={samsungUltra} price={'1642.4'} />
+          <ProductItem productName={'Logitech MX2 Mo...'} image={mx2Mouse} price={'1642.4'} />
+          <ProductItem productName={'Samsung S23 Ultra'} image={samsungUltra} price={'1642.4'} />
+          <ProductItem productName={'Logitech MX2 Mo...'} image={mx2Mouse} price={'1642.4'} />
+          <ProductItem productName={'Samsung S23 Ultra'} image={samsungUltra} price={'1642.4'} />
+          <ProductItem productName={'Logitech MX2 Mo...'} image={mx2Mouse} price={'1642.4'} />
+          <ProductItem productName={'Samsung S23 Ultra'} image={samsungUltra} price={'1642.4'} />
+          <ProductItem productName={'Logitech MX2 Mo...'} image={mx2Mouse} price={'1642.4'} />
+          <ProductItem productName={'Samsung S23 Ultra'} image={samsungUltra} price={'1642.4'} />
+          <ProductItem productName={'Logitech MX2 Mo...'} image={mx2Mouse} price={'1642.4'} />
         </div>
       </section>
 
