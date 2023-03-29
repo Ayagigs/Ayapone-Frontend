@@ -4,6 +4,7 @@ import NavBar from '../components/NavBar'
 import Carousel from 'react-multi-carousel'
 import SlideOne from '../components/home/SlideOne'
 import CategoryCard from '../components/home/CategoryCard'
+import Brands from '../components/home/Brands'
 
 import phoneCat from '../assets/images/products/design_startframe.svg'
 import headset from '../assets/images/products/headset.svg'
@@ -103,28 +104,21 @@ const HomePage = () => {
                 <span className='text-lg'>MINUTES</span>
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
-      home page
-      <br /><br /><br />
-      <Link to={routes.BUYER_SIGN_UP_PAGE} className='bg-ayaPrimary-600 font-bold rounded-[8px] mt-12 text-white w-[200px] h-[54px]'>Buyer Sign Up</Link>
-      <br /><br />
-      <Link to={routes.BUYER_SIGN_IN_PAGE} className='bg-ayaPrimary-600 font-bold rounded-[8px] mt-12 text-white w-[200px] h-[54px]'>Buyer Sign In</Link>
-      <br /><br />
-      <Link to={routes.BUYER_DASHBOARD_PAGE} className='bg-ayaPrimary-600 font-bold rounded-[8px] mt-12 text-white w-[200px] h-[54px]'>Buyer Dashboard</Link>
-      <br /><br /><br /><br />
-      <Link to={routes.MERCHANT_SIGN_IN_PAGE} className='bg-ayaPrimary-600 font-bold rounded-[8px] mt-12 text-white w-[200px] h-[54px]'>Merchant Sign In</Link>
-      <br /><br />
-      <Link to={routes.MERCHANT_SIGN_UP_PAGE} className='bg-ayaPrimary-600 font-bold rounded-[8px] mt-12 text-white w-[200px] h-[54px]'>Merchant Sign Up</Link>
-      <br /><br />
-      <Link to={routes.MERCHANT_DASHBOARD_PAGE} className='bg-ayaPrimary-600 font-bold rounded-[8px] mt-12 text-white w-[200px] h-[54px]'>Merchant Dashboard</Link>
-      <br /><br />
-      <Link to={routes.FORGOT_PASSWORD_PAGE} className='bg-ayaPrimary-600 font-bold rounded-[8px] mt-12 text-white w-[200px] h-[54px]'>Forgot password</Link>
-      <br /><br /><br /><br />
-      <Link to={routes.CREATE_PASSWORD_PAGE} className='bg-ayaPrimary-600 font-bold rounded-[8px] mt-12 text-white w-[200px] h-[54px]'>Create new password</Link>
+      <section className='py-[90px] px-24 flex flex-row w-full space-x-6'>
+        <h1 className='font-semibold text-[32px] text-left'>Trending Products</h1>
+        <div className='justify-center'>
+
+        </div>
+      </section>
+
+      <section className='py-[90px] px-24 flex flex-col w-full space-y-10'>
+        <h1 className='font-semibold text-[32px] text-left'>Shop your favorite brand</h1>
+        <Brands />
+      </section>
     </main>
   );
 };
