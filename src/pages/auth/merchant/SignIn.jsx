@@ -26,8 +26,8 @@ const SignIn = () => {
             <img src={GoogleIcon} alt="google_icon" className='mr-4'/> Continue with Google
           </span>
         </div>
-        <fieldset class="border-t border-ayaNeutral-500">
-          <legend class="mx-auto px-4 text-lg">OR</legend>
+        <fieldset className="border-t border-ayaNeutral-500">
+          <legend className="mx-auto px-4 text-lg">OR</legend>
         </fieldset>
         
         <InputBox name={'email'} label={'Email Address'} isCompulsory={true} placeholder={'Enter Email Address'} />
