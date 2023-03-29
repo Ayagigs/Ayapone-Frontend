@@ -6,7 +6,7 @@ import UserAvater from '../assets/images/user_avatar.svg'
 const NavBarAccount = ({
   isOpen
 }) => {
-  const { user } = useCurrentUserStore()
+  const { user, wipeAllData } = useCurrentUserStore()
   return (
     <>
     {(user && user.last_name && user.first_name) ? 
@@ -27,7 +27,7 @@ const NavBarAccount = ({
             }
           </li>
           <li>
-            <Link to={user.user_role+'/'+routes.DASHBOARD_PAGE}>Sign Out</Link>
+            <Link onClick={() => wipeAllData()}>Sign Out</Link>
           </li>
         </ul>
       </div>
