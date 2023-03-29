@@ -5,8 +5,7 @@ import Ayp from '../../assets/icons/ayp.svg'
 const ProductItem = ({
   image,
   productName,
-  price,
-  scale
+  price
 }) => {
   return (
     <div className={`flex flex-col overflow-hidden rounded-2xl h-[308px] w-[188px] text-center px-5 py-6 border mt-10 mx-5`}>
