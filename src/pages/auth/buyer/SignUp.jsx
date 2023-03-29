@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 import AyaponeLogo from '../../../assets/images/ayapone_logo.svg'
 import InputBox from '../../../components/forms/InputBox'
 import Otp from '../components/Otp'
