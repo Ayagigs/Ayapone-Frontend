@@ -44,32 +44,31 @@ const Otp = () => {
               </div>
               <button >X</button>
             </div>
-              <div className='text-center flex flex-col item-center'>
-                <div className="text-center text-xs mb-11">
-                  <span className="font-normal">Please enter the 4-digit code sent to</span><br />
-                  <span className="font-bold">{user.email}</span>
-                </div>
-
-                <OtpInput
-                  value={otp}
-                  onChange={setOtp}
-                  numInputs={4}
-                  renderSeparator={<span>-</span>}
-                  inputStyle={'flex min-h-[48px] min-w-[48px] bg-white text-sm border rounded-lg border-ayaNeutral-600 outline-none px-2'}
-                  shouldAutoFocus={true}
-                  inputType={'tel'}
-                  renderInput={(props) => <input {...props} />}
-                />
-
-                <button type="submit" className='bg-ayaPrimary-600 font-semibold text-base rounded-[8px] mt-12 text-white w-[264px] h-[50px]'
-                  onClick={() => handleSubmit()}
-                >
-                  Verify Email
-                </button>
-
-                <p className="text-base font-normal text-center mt-5">Didn’t get a code? <Link to={routes.BUYER_SIGN_IN_PAGE} className='font-bold text-ayaPrimary-600'>Click to resend</Link></p>
+            <div className='text-center flex flex-col item-center'>
+              <div className="text-center text-xs mb-11">
+                <span className="font-normal">Please enter the 4-digit code sent to</span><br />
+                <span className="font-bold">{user.email}</span>
               </div>
-              
+
+              <OtpInput
+                value={otp}
+                onChange={setOtp}
+                numInputs={4}
+                renderSeparator={<span>-</span>}
+                inputStyle={'flex min-h-[48px] min-w-[48px] bg-white text-sm border rounded-lg border-ayaNeutral-600 outline-none px-2'}
+                shouldAutoFocus={true}
+                inputType={'tel'}
+                renderInput={(props) => <input {...props} />}
+              />
+
+              <button type="submit" className='bg-ayaPrimary-600 font-semibold text-base rounded-[8px] mt-12 text-white w-[264px] h-[50px]'
+                onClick={() => handleSubmit()}
+              >
+                Verify Email
+              </button>
+
+              <p className="text-base font-normal text-center mt-5">Didn’t get a code? <Link to={routes.BUYER_SIGN_IN_PAGE} className='font-bold text-ayaPrimary-600'>Click to resend</Link></p>
+            </div>
           </div>
         </div>
         :
