@@ -28,7 +28,7 @@ const sideBarData = [
   {
     icon: <SlCalender />,
     title: 'Orders',
-    path: routes.DASHBOARD_PAGE,
+    path: routes.ORDERS_PAGE,
     for: ['merchant', 'admin']
   },
   {

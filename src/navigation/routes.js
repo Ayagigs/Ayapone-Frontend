@@ -11,6 +11,7 @@ export default Object.freeze({
   MERCHANT_SIGN_IN_PAGE: '/merchant/signin',
   MERCHANT_SIGN_UP_PAGE: '/merchant/signup',
   NOTIFICATION_PAGE: 'notifications',
+  ORDERS_PAGE: 'orders',
   PROFILE_PAGE: 'profile',
   TERMS_AND_CONDITION_PAGE: '/terms-and-condition',
   TRACK_ORDER_PAGE: 'track-orders',
