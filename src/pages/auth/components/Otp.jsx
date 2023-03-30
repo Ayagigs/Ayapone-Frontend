@@ -42,7 +42,6 @@ const Otp = () => {
               <div className="flex flex-row item-center justify-center w-full space-x-12">
                 <div className='font-semibold text-2xl'>Verification</div>
               </div>
-              <button >X</button>
             </div>
             <div className='text-center flex flex-col item-center'>
               <div className="text-center text-xs mb-11">

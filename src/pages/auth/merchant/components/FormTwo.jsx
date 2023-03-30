@@ -2,9 +2,14 @@ import InputBox from '../../../../components/forms/InputBox'
 import { useMerchantSignupStore } from '../../../../store/merchantSignupStore'
 import { HiArrowNarrowRight } from 'react-icons/hi'
 import { MdPhotoCameraBack } from 'react-icons/md'
+import DocumentTypes from '../../../../data/DocumentTypes'
+import { toast } from 'react-toastify'
 
 const FormTwo = () => {
-  const { activeStep, setActiveStep } = useMerchantSignupStore()
+  const { id_number, id_type, setIdNumber, setIdType, activeStep, setActiveStep } = useMerchantSignupStore()
+  const next = () => {
+    setActiveStep(activeStep+1)
+  }
   return (
     <>
       <div className="flex flex-wrap -mx-3 mb-6">
@@ -13,19 +18,16 @@ const FormTwo = () => {
             <label className="text-sm text-ayaNeutral-900 font-normal mb-4" htmlFor={'documenttype'}>
               Document Type<span className="text-ayaDanger-200">*</span>
             </label>
-            <select id="document_type" className="text-gray-900 focus:ring-blue-500 flex h-[54px] bg-white text-sm border rounded-lg border-ayaNeutral-600 w-full outline-none px-6 placeholder:text-ayaNeutral-500 placeholder:text-sm" name='document_type'>
-              <option defaultValue={`selected`}>Choose a Document Type</option>
-              <option value="US">United States</option>
-              <option value="CA">Canada</option>
-              <option value="FR">France</option>
-              <option value="DE">Germany</option>
+            <select id="document_type" className="text-gray-900 focus:ring-blue-500 flex h-[54px] bg-white text-sm border rounded-lg border-ayaNeutral-600 w-full outline-none px-6 placeholder:text-ayaNeutral-500 placeholder:text-sm" name='document_type' onChange={(e) => setIdType(e.target.value)}>
+              <option value={`none`}>Choose a Document Type</option>
+              {DocumentTypes.map((item, index) => {
+                return (item.id == id_type) ? <option key={index} value={item.id} selected='selected'>{item.name}</option> : <option key={index} value={item.id}>{item.name}</option>
+              })}
             </select>
           </div>
-
-          {/* <p className="text-red-500 text-xs italic">Please fill out this field.</p> */}
         </div>
         <div className="w-full md:w-1/2 px-3">
-          <InputBox name={'id_number'} width={'w-full'} label={'Identification Number'} isCompulsory={true} placeholder={'Identification Number'} />
+          <InputBox name={'id_number'} width={'w-full'} label={'Identification Number'} isCompulsory={true} placeholder={'Identification Number'} value={id_number} onChange={(e) => setIdNumber(e.target.value)} />
         </div>
       </div>
 
@@ -58,7 +60,7 @@ const FormTwo = () => {
       </div>
       <button 
         className='bg-ayaPrimary-600 font-bold rounded-[8px] mt-12 text-white w-[426px] h-[50px] flex space-x-2 justify-center items-center'
-        onClick={() => setActiveStep(activeStep+1)}
+        onClick={() => next()}
       >
         Next <HiArrowNarrowRight />
       </button>

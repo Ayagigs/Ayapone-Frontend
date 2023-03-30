@@ -13,7 +13,7 @@ import { toast } from 'react-toastify'
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false)
   const { email, password, setEmail, setPassword } = useSignInFormStore()
-  const { user, setToken, setUser, setWallet } = useCurrentUserStore()
+  const { user, setToken, setUser, setWallet, setBusinessKyc } = useCurrentUserStore()
   const signin = useMutation((userData) => LocalSignIn(userData))
   const navigate = useNavigate()
 
@@ -33,6 +33,7 @@ const SignIn = () => {
             updated_at: response.data.data.wallet.updated_at
           }
           setWallet(wallet)
+          setBusinessKyc(response.data.data.businessKyc)
           toast.success(response.data.message)
           if (merchant.user_role != 'merchant') {
             toast.warning('Your account cannot access merchants dashboard. You have been redirected to the customers\' dashboard.')
