@@ -1,13 +1,32 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 import AyaponeLogo from '../../assets/images/ayapone_logo.svg'
 import InputBox from '../../components/forms/InputBox'
 import { Link } from 'react-router-dom'
 import routes from '../../navigation/routes'
+import { RequestPasswordReset } from '../../api/authApi'
+import { useMutation } from '@tanstack/react-query'
+import { toast } from 'react-toastify'
 
 const ForgotPassword = () => {
-  const [showPassword, setShowPassword] = useState(false);
-  const handleClickShowPassword = () => setShowPassword(!showPassword);
-  const handleMouseDownPassword = () => setShowPassword(!showPassword);
+  const [email, setEmail] = useState('')
+  const requestReset = useMutation((userData) => RequestPasswordReset(userData))
+
+  const handleSubmit = async () => {
+    try {
+      const response = await requestReset.mutateAsync({ email })
+      if (response) {
+        console.log(response)
+        if (response.ok) {
+          toast.success(response.data.message)
+        } else {
+          toast.error(response.data?.message || response.problem)
+        }
+      }
+    } catch (error) {
+      toast.error('an error occured!')
+      console.log('error is: ', error)
+    }
+  }
 
   return (
     <div className='bg-ayaNeutral-100 h-auto min-h-screen w-full grid place-items-center text-ayaNeutral-900'>
@@ -21,9 +40,11 @@ const ForgotPassword = () => {
             <span className="text-base ">Reset your Ayapone password</span>
           </div>
           
-          <InputBox name={'email'} label={'Email Address'} isCompulsory={true} placeholder={'Enter Email Address'} />
+          <InputBox name={'email'} label={'Email Address'} isCompulsory={true} placeholder={'Enter Email Address'} onChange={(e) => setEmail(e.target.value)} />
 
-          <button type="submit" className='bg-ayaPrimary-600 font-bold rounded-[8px] mt-12 text-white w-[426px] h-[54px]'>
+          <button className='bg-ayaPrimary-600 font-bold rounded-[8px] mt-12 text-white w-[426px] h-[54px]'
+            onClick={() => handleSubmit()}
+          >
             Send code
           </button>
           <button

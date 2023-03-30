@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import AyaponeLogo from '../../assets/images/ayapone_logo.svg'
-import GoogleIcon from '../../assets/images/google_icon.svg'
 import InputBox from '../../components/forms/InputBox'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import routes from '../../navigation/routes'
 
-const CreatePassword = () => {
-  const [showPassword, setShowPassword] = useState(false);
-  const handleClickShowPassword = () => setShowPassword(!showPassword);
-  const handleMouseDownPassword = () => setShowPassword(!showPassword);
+const PasswordReset = () => {
+  const [showPassword, setShowPassword] = useState(false)
+  const { token } = useParams()
+  console.log(token)
 
   return (
     <div className='bg-ayaNeutral-100 h-auto min-h-screen w-full grid place-items-center text-ayaNeutral-900'>
@@ -38,4 +37,4 @@ const CreatePassword = () => {
   );
 };
 
-export default CreatePassword;
+export default PasswordReset;
