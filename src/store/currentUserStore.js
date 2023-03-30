@@ -8,10 +8,12 @@ const currentUserStore = create(
       token: '',
       user: {},
       wallet: {},
+      businessKyc: {},
       setToken: (token) => set(() => ({ token: token })),
       setUser: (user) => set(() => ({ user: user })),
       setWallet: (wallet) => set(() => ({ wallet: wallet })),
-      wipeAllData: () => set(() => ({ token: '', user: {}, wallet: {} })),
+      setBusinessKyc: (kyc) => set(() => ({ businessKyc: kyc })),
+      wipeAllData: () => set(() => ({ token: '', user: {}, wallet: {}, businessKyc: {} })),
     }),
     {
       name: 'currentUserStore',
@@ -22,13 +24,15 @@ const currentUserStore = create(
 
 export const useCurrentUserStore = () => {
   const store = currentUserStore(
-    ({ token, user, wallet, setToken, setUser, setWallet, wipeAllData }) => ({
+    ({ token, user, wallet, businessKyc, setToken, setUser, setWallet, setBusinessKyc, wipeAllData }) => ({
       token,
       user,
       wallet,
+      businessKyc,
       setToken,
       setUser,
       setWallet,
+      setBusinessKyc,
       wipeAllData
     }),
     shallow,

@@ -6,6 +6,7 @@ const merchantSignupStore = create(
   persist(
     (set) => ({
       activeStep: 1,
+      showOtp: false,
       last_name: '',
       first_name: '',
       email: '',
@@ -47,6 +48,7 @@ const merchantSignupStore = create(
       setWalletAddressType: (wallet_address_type) => set(() => ({ wallet_address_type })),
       setWalletAddressNickname: (wallet_address_nickname) => set(() => ({ wallet_address_nickname })),
       setActiveStep: (step) => set(() => ({ activeStep: step })),
+      setShowOtp: (show) => set(() => ({ showOtp: show })),
     }),
     {
       name: 'useMerchantSignupStore',
@@ -59,6 +61,7 @@ export const useMerchantSignupStore = () => {
   const store = merchantSignupStore(
     ({
       activeStep,
+      showOtp,
       last_name,
       first_name,
       email,
@@ -99,9 +102,11 @@ export const useMerchantSignupStore = () => {
       setWalletAddress,
       setWalletAddressType,
       setWalletAddressNickname,
-      setActiveStep
+      setActiveStep,
+      setShowOtp
     }) => ({
       activeStep,
+      showOtp,
       last_name,
       first_name,
       email,
@@ -142,7 +147,8 @@ export const useMerchantSignupStore = () => {
       setWalletAddress,
       setWalletAddressType,
       setWalletAddressNickname,
-      setActiveStep
+      setActiveStep,
+      setShowOtp
     }),
     shallow,
   )
