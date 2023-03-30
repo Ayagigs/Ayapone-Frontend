@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import AyaponeLogo from '../../../assets/images/ayapone_logo.svg'
 import GoogleIcon from '../../../assets/images/google_icon.svg'
 import InputBox from '../../../components/forms/InputBox'
-import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import routes from '../../../navigation/routes'
 import { useSignInFormStore } from '../../../store/signInFormStore'
 import { useCurrentUserStore } from '../../../store/currentUserStore'
@@ -25,8 +25,9 @@ const SignIn = () => {
       if (response) {
         console.log(response)
         if (response.ok) {
+          const buyer = response.data.data.user
+          setUser(buyer)
           setToken(response.data.data.token)
-          setUser(response.data.data.user)
           const wallet = {
             bonus_wallet: response.data.data.wallet.bonus_wallet,
             main_wallet: response.data.data.wallet.main_wallet,
@@ -36,7 +37,12 @@ const SignIn = () => {
           setWallet(wallet)
           toast.success(response.data.message)
 
-          navigate(`/${user.user_role}/${routes.DASHBOARD_PAGE}`)
+          console.log(buyer.user_role);
+          if (buyer.user_role != 'buyer') {
+            toast.warning('Your account cannot access customers\' dashboard. You have been redirected to the merchants\' dashboard.')
+          }
+          
+          navigate(`/${buyer.user_role}/${routes.DASHBOARD_PAGE}`)
         } else {
           toast.error(response.data?.message || response.problem)
         }

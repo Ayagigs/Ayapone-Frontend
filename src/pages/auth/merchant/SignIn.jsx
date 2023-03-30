@@ -2,13 +2,52 @@ import React, { useState } from 'react'
 import AyaponeLogo from '../../../assets/images/ayapone_logo.svg'
 import GoogleIcon from '../../../assets/images/google_icon.svg'
 import InputBox from '../../../components/forms/InputBox'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import routes from '../../../navigation/routes'
+import { useSignInFormStore } from '../../../store/signInFormStore'
+import { useCurrentUserStore } from '../../../store/currentUserStore'
+import { LocalSignIn } from '../../../api/authApi'
+import { useMutation } from '@tanstack/react-query'
+import { toast } from 'react-toastify'
 
 const SignIn = () => {
-  const [showPassword, setShowPassword] = useState(false);
-  const handleClickShowPassword = () => setShowPassword(!showPassword);
-  const handleMouseDownPassword = () => setShowPassword(!showPassword);
+  const [showPassword, setShowPassword] = useState(false)
+  const { email, password, setEmail, setPassword } = useSignInFormStore()
+  const { user, setToken, setUser, setWallet } = useCurrentUserStore()
+  const signin = useMutation((userData) => LocalSignIn(userData))
+  const navigate = useNavigate()
+
+  const handleSubmit = async () => {
+    try {
+      const response = await signin.mutateAsync({email, password})
+      if (response) {
+        console.log(response)
+        if (response.ok) {
+          const merchant = response.data.data.user
+          setUser(merchant)
+          setToken(response.data.data.token)
+          const wallet = {
+            bonus_wallet: response.data.data.wallet.bonus_wallet,
+            main_wallet: response.data.data.wallet.main_wallet,
+            created_at: response.data.data.wallet.created_at,
+            updated_at: response.data.data.wallet.updated_at
+          }
+          setWallet(wallet)
+          toast.success(response.data.message)
+          if (merchant.user_role != 'merchant') {
+            toast.warning('Your account cannot access merchants dashboard. You have been redirected to the customers\' dashboard.')
+          }
+          
+          navigate(`/${merchant.user_role}/${routes.DASHBOARD_PAGE}`)
+        } else {
+          toast.error(response.data?.message || response.problem)
+        }
+      }
+    } catch (error) {
+      toast.error('an error occured!')
+      console.log('error is: ', error);
+    }
+  }
 
   return (
     <div className='bg-ayaNeutral-100 h-auto min-h-screen w-full grid place-items-center text-ayaNeutral-900'>
@@ -30,10 +69,12 @@ const SignIn = () => {
           <legend className="mx-auto px-4 text-lg">OR</legend>
         </fieldset>
         
-        <InputBox name={'email'} label={'Email Address'} isCompulsory={true} placeholder={'Enter Email Address'} />
-        <InputBox name={'password'} label={'Password'} isCompulsory={true} type={'password'} placeholder={'Enter Password'} />
+        <InputBox name={'email'} label={'Email Address'} isCompulsory={true} placeholder={'Enter Email Address'} onChange={(e) => setEmail(e.target.value)} />
+        <InputBox name={'password'} label={'Password'} isCompulsory={true} type={'password'} placeholder={'Enter Password'} onChange={(e) => setPassword(e.target.value)} />
 
-        <button type="submit" className='bg-ayaPrimary-600 font-bold rounded-[8px] mt-12 text-white w-[426px] h-[54px]'>
+        <button className='bg-ayaPrimary-600 font-bold rounded-[8px] mt-12 text-white w-[426px] h-[54px]'
+          onClick={() => handleSubmit()}
+        >
           Log In
         </button>
 
