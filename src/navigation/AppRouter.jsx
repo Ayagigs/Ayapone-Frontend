@@ -16,6 +16,7 @@ import MerchantSignUpPage from '../pages/auth/merchant/SignUp'
 import NotificationPage from '../pages/app/Notification'
 import HomePage from '../pages/HomePage'
 import MerchantProductsPage from '../pages/app/merchant/Products'
+import OrdersPage from '../pages/app/merchant/Orders'
 import PageNotFound from '../pages/PageNotFound'
 import ProfilePage from '../pages/app/Profile'
 import TermsAndConditionPage from '../pages/TermsAndCondition'
@@ -58,6 +59,7 @@ const AppRouter = () => {
         <Route path={routes.WALLET_PAGE} element={<WalletPage />} />
         <Route path={routes.PROFILE_PAGE} element={<ProfilePage />} />
         <Route path={routes.NOTIFICATION_PAGE} element={<NotificationPage />} />
+        <Route path={routes.ORDERS_PAGE} element={<OrdersPage />} />
 
       </Route>
 

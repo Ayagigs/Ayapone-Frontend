@@ -11,6 +11,7 @@ const currentUserStore = create(
       setToken: (token) => set(() => ({ token: token })),
       setUser: (user) => set(() => ({ user: user })),
       setWallet: (wallet) => set(() => ({ wallet: wallet })),
+      wipeAllData: () => set(() => ({ token: '', user: {}, wallet: {} })),
     }),
     {
       name: 'currentUserStore',
@@ -21,13 +22,14 @@ const currentUserStore = create(
 
 export const useCurrentUserStore = () => {
   const store = currentUserStore(
-    ({ token, user, wallet, setToken, setUser, setWallet }) => ({
+    ({ token, user, wallet, setToken, setUser, setWallet, wipeAllData }) => ({
       token,
       user,
       wallet,
       setToken,
       setUser,
       setWallet,
+      wipeAllData
     }),
     shallow,
   )
