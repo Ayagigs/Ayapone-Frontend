@@ -71,6 +71,7 @@ const SignIn = () => {
         
         <InputBox name={'email'} label={'Email Address'} isCompulsory={true} placeholder={'Enter Email Address'} onChange={(e) => setEmail(e.target.value)} />
         <InputBox name={'password'} label={'Password'} isCompulsory={true} type={'password'} placeholder={'Enter Password'} onChange={(e) => setPassword(e.target.value)} />
+        <Link to={routes.FORGOT_PASSWORD_PAGE} className='text-ayaPrimary-600 text-base font-normal text-right'><p>Forgot Password?</p></Link>
 
         <button className='bg-ayaPrimary-600 font-bold rounded-[8px] mt-12 text-white w-[426px] h-[54px]'
           onClick={() => handleSubmit()}

@@ -3,7 +3,7 @@ export default Object.freeze({
   BUYER_SIGN_IN_PAGE: '/signin',
   BUYER_SIGN_UP_PAGE: '/signup',
   CART_DASHBOARD_PAGE: 'cart',
-  CREATE_PASSWORD_PAGE: '/create-password',
+  PASSWORD_RESET_PAGE: '/password-reset/:token',
   DASHBOARD_PAGE: 'dashboard',
   FORGOT_PASSWORD_PAGE: '/forgot-password',
   HOME_PAGE: '/',

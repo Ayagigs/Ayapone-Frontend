@@ -12,7 +12,7 @@ export const VerifyEmail = async (data) =>
   await baseApi.post(`${AuthPath}/verify`, data)
 
 export const RequestPasswordReset = async (data) =>
-  await baseApi.post(`${AuthPath}/reset-password-reset`, data)
+  await baseApi.post(`${AuthPath}/request-password-reset`, data)
 
 export const ResetPassword = async (data) =>
   await baseApi.post(`${AuthPath}/reset-password`, data)
