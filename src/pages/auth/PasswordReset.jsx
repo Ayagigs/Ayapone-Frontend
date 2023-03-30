@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import AyaponeLogo from '../../assets/images/ayapone_logo.svg'
 import InputBox from '../../components/forms/InputBox'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import routes from '../../navigation/routes'
 import { ResetPassword } from '../../api/authApi'
 import { useMutation } from '@tanstack/react-query'
@@ -9,6 +9,7 @@ import { toast } from 'react-toastify'
 
 const PasswordReset = () => {
   const [showPassword, setShowPassword] = useState(false)
+  const navigate = useNavigate()
   const { token } = useParams()
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
@@ -22,6 +23,7 @@ const PasswordReset = () => {
           console.log(response)
           if (response.ok) {
             toast.success(response.data.message)
+            navigate(routes.HOME_PAGE)
           } else {
             toast.error(response.data?.message || response.problem)
           }
