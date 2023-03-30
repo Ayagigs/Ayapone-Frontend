@@ -8,7 +8,6 @@ import BuyerDashboardPage from '../pages/app/buyer/Dashboard'
 import BuyerSignInPage from '../pages/auth/buyer/SignIn'
 import BuyerSignUpPage from '../pages/auth/buyer/SignUp'
 import CartDashboardPage from '../pages/app/buyer/Cart'
-import CreatePasswordPage from '../pages/auth/CreatePassword'
 import ForgotPasswordPage from '../pages/auth/ForgotPassword'
 import MerchantDashboardPage from '../pages/app/merchant/Dashboard'
 import MerchantSignInPage from '../pages/auth/merchant/SignIn'
@@ -18,6 +17,7 @@ import HomePage from '../pages/HomePage'
 import MerchantProductsPage from '../pages/app/merchant/Products'
 import OrdersPage from '../pages/app/merchant/Orders'
 import PageNotFound from '../pages/PageNotFound'
+import PasswordResetPage from '../pages/auth/PasswordReset'
 import ProfilePage from '../pages/app/Profile'
 import TermsAndConditionPage from '../pages/TermsAndCondition'
 import TrackOrderPage from '../pages/app/buyer/TrackOrder'
@@ -37,7 +37,7 @@ const AppRouter = () => {
       <Route path={routes.MERCHANT_SIGN_IN_PAGE} element={<MerchantSignInPage />} />
       <Route path={routes.MERCHANT_SIGN_UP_PAGE} element={<MerchantSignUpPage />} />
       <Route path={routes.FORGOT_PASSWORD_PAGE} element={<ForgotPasswordPage />} />
-      <Route path={routes.CREATE_PASSWORD_PAGE} element={<CreatePasswordPage />} />
+      <Route path={routes.PASSWORD_RESET_PAGE} element={<PasswordResetPage />} />
       <Route path={routes.TERMS_AND_CONDITION_PAGE} element={<TermsAndConditionPage />} />
 
       {/* TODO: PROTECT THESE ROUTES */}
