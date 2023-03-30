@@ -1,14 +1,21 @@
 import routes from '../../../navigation/routes'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useLocation } from 'react-router';
 import SideBarData from '../../../navigation/SideBarData';
 import Logo from '../../../assets/images/ayapone_logo.svg'
 import { TbLogout } from 'react-icons/tb'
 import { useCurrentUserStore } from '../../../store/currentUserStore'
+import { toast } from 'react-toastify'
 
 const SideBarMenu = () => {
   const { pathname } = useLocation()
   const { user, wipeAllData } = useCurrentUserStore()
+  const navigate = useNavigate()
+  const logout = () => {
+    wipeAllData()
+    toast.success('You have logged out.')
+    navigate(routes.HOME_PAGE)
+  }
   return (
     <aside className="w-64 h-screen bg-white px-6 text-ayaNeutral-900 sticky top-0">
       <div className='py-7 pl-6'>
@@ -37,7 +44,7 @@ const SideBarMenu = () => {
         })}
       </ul>
 
-      <div className='text-ayaDanger-200 h-14 py-4 pl-6 mt-14 rounded-lg hover:bg-ayaDanger-100 flex items-center' onClick={() => wipeAllData()}>
+      <div className='text-ayaDanger-200 h-14 py-4 pl-6 mt-14 rounded-lg hover:bg-ayaDanger-100 flex items-center' onClick={() => logout()}>
         <TbLogout /><span className='ml-4 '>Logout</span>
       </div>
     </aside>
