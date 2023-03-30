@@ -1,7 +1,7 @@
 import routes from '../../../navigation/routes'
 import { Link, useNavigate } from 'react-router-dom'
-import { useLocation } from 'react-router';
-import SideBarData from '../../../navigation/SideBarData';
+import { useLocation } from 'react-router'
+import SideBarData from '../../../navigation/SideBarData'
 import Logo from '../../../assets/images/ayapone_logo.svg'
 import { TbLogout } from 'react-icons/tb'
 import { useCurrentUserStore } from '../../../store/currentUserStore'
