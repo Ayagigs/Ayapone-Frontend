@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 import AyaponeLogo from '../../../assets/images/ayapone_logo.svg'
 import GoogleIcon from '../../../assets/images/google_icon.svg'
 import InputBox from '../../../components/forms/InputBox'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import routes from '../../../navigation/routes'
 import { useSignInFormStore } from '../../../store/signInFormStore'
 import { useCurrentUserStore } from '../../../store/currentUserStore'
@@ -15,8 +15,9 @@ const SignIn = () => {
   const handleClickShowPassword = () => setShowPassword(!showPassword);
   const handleMouseDownPassword = () => setShowPassword(!showPassword);
   const { email, password, setEmail, setPassword } = useSignInFormStore()
-  const { setToken, setUser, setWallet } = useCurrentUserStore()
+  const { user, setToken, setUser, setWallet } = useCurrentUserStore()
   const signin = useMutation((userData) => LocalSignIn(userData))
+  const navigate = useNavigate()
 
   const handleSubmit = async () => {
     try {
@@ -34,6 +35,8 @@ const SignIn = () => {
           }
           setWallet(wallet)
           toast.success(response.data.message)
+
+          navigate(`/${user.user_role}/${routes.DASHBOARD_PAGE}`)
         } else {
           toast.error(response.data?.message || response.problem)
         }
