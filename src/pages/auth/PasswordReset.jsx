@@ -1,13 +1,54 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 import AyaponeLogo from '../../assets/images/ayapone_logo.svg'
 import InputBox from '../../components/forms/InputBox'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import routes from '../../navigation/routes'
+import { ResetPassword } from '../../api/authApi'
+import { useMutation } from '@tanstack/react-query'
+import { toast } from 'react-toastify'
 
 const PasswordReset = () => {
   const [showPassword, setShowPassword] = useState(false)
+  const navigate = useNavigate()
   const { token } = useParams()
-  console.log(token)
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
+  const requestReset = useMutation((userData) => ResetPassword(userData))
+
+  const handleSubmit = async () => {
+    if (comparePassword()) {
+      try {
+        const response = await requestReset.mutateAsync({ token, new_password:password })
+        if (response) {
+          console.log(response)
+          if (response.ok) {
+            toast.success(response.data.message)
+            navigate(routes.HOME_PAGE)
+          } else {
+            toast.error(response.data?.message || response.problem)
+          }
+        }
+      } catch (error) {
+        toast.error('an error occured!')
+        console.log('error is: ', error)
+      }
+    }
+  }
+
+  const comparePassword = () => {
+    if ((password.trim() == '') || (confirmPassword.trim() == '')) {
+      console.log('empty');
+      toast.error('password cannot be empty.')
+      return false
+    }
+    if (password.trim() != confirmPassword.trim()) {
+      console.log('mismatch');
+      toast.error('password mismatch.')
+      return false
+    }
+    console.log('passed');
+    return true
+  }
 
   return (
     <div className='bg-ayaNeutral-100 h-auto min-h-screen w-full grid place-items-center text-ayaNeutral-900'>
@@ -21,10 +62,12 @@ const PasswordReset = () => {
             <span className="text-base ">Create your new Ayapone password</span>
           </div>
           
-          <InputBox name={'new_password'} label={'New Password'} isCompulsory={true} type={'password'} placeholder={'Password'} />
-          <InputBox name={'verify_password'} label={'Verify Password'} isCompulsory={true} type={'password'} placeholder={'Password'} />
+          <InputBox name={'new_password'} label={'New Password'} isCompulsory={true} type={'password'} placeholder={'Password'} required={'required'} onChange={(e) => setPassword(e.target.value)} />
+          <InputBox name={'verify_password'} label={'Verify Password'} isCompulsory={true} type={'password'} placeholder={'Password'} required={'required'} onChange={(e) => setConfirmPassword(e.target.value)} />
 
-          <button type="submit" className='bg-ayaPrimary-600 font-bold rounded-[8px] mt-12 text-white w-[426px] h-[54px]'>
+          <button className='bg-ayaPrimary-600 font-bold rounded-[8px] mt-12 text-white w-[426px] h-[54px]'
+            onClick={() => handleSubmit()}
+          >
             Submit
           </button>
           <button

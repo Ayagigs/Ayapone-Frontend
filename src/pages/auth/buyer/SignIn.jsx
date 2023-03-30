@@ -15,7 +15,7 @@ const SignIn = () => {
   const handleClickShowPassword = () => setShowPassword(!showPassword);
   const handleMouseDownPassword = () => setShowPassword(!showPassword);
   const { email, password, setEmail, setPassword } = useSignInFormStore()
-  const { user, setToken, setUser, setWallet } = useCurrentUserStore()
+  const { user, setToken, setUser, setWallet, setBusinessKyc } = useCurrentUserStore()
   const signin = useMutation((userData) => LocalSignIn(userData))
   const navigate = useNavigate()
 
@@ -35,6 +35,7 @@ const SignIn = () => {
             updated_at: response.data.data.wallet.updated_at
           }
           setWallet(wallet)
+          setBusinessKyc(response.data.data.businessKyc)
           toast.success(response.data.message)
 
           console.log(buyer.user_role);

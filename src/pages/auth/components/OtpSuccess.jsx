@@ -15,18 +15,22 @@ const OtpSuccess = () => {
           </div>
         </div>
         <div className='text-center flex flex-col item-center'>
-          <div className="text-center text-xs mb-11">
-            <span className="font-normal">Please enter the 4-digit code sent to</span><br />
-            <span className="font-bold">{user.email}</span>
+          <div className="text-center text-xs mb-2">
+            <span className="font-semibold text-2xl">Registration Successful</span>
           </div>
-          <h3>Account Activated</h3>
-          <p>Welcome, { user.user_role }!</p>
+          <p>Welcome onboard, { user.user_role == 'merchant' ? 'Merchant' : user.first_name }!</p>
 
-          <p className="text-base font-normal text-center mt-5">
-            <Link to={routes.HOME_PAGE} className='font-bold text-ayaPrimary-600 py-3 px-[14px] border border-ayaPrimary-600 bg-ayaPrimary-100'>Return to Home</Link>
+          <div className="text-base font-normal space-x-4 text-center mt-10">
+            { user.user_role == 'merchant' ? 
+              <>
+                <Link to={routes.HOME_PAGE} className='font-bold text-ayaPrimary-600 py-3 px-[14px] border border-ayaPrimary-600 rounded-[8px] bg-ayaPrimary-100'>Return to Home</Link>
 
-            <Link to={user.user_role == 'merchant' ? '/merchant/dashboard' : '/buyer/dashboard'} className='font-bold bg-ayaPrimary-600 text-white py-3 px-[14px] h-[50px]'>Proceed to Dashboard</Link>
-          </p>
+                <Link to={'/merchant/dashboard'} className='font-bold bg-ayaPrimary-600 rounded-[8px] text-white py-3 px-[14px] h-[50px]'>Proceed to Dashboard</Link>
+              </>
+            :
+              <Link to={routes.HOME_PAGE} className='font-bold bg-ayaPrimary-600 rounded-[8px] text-white py-3 px-[14px] h-[50px]'>Continue</Link>
+            }
+          </div>
         </div>
       </div>
     </div>

@@ -11,10 +11,10 @@ import { useMutation } from '@tanstack/react-query'
 import { toast } from 'react-toastify'
 
 const SignUp = () => {
-  const [showOtp, setShowOtp] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
-  const handleClickShowPassword = () => setShowPassword(!showPassword);
-  const handleMouseDownPassword = () => setShowPassword(!showPassword);
+  const [showOtp, setShowOtp] = useState(false)
+  const [showPassword, setShowPassword] = useState(false)
+  const handleClickShowPassword = () => setShowPassword(!showPassword)
+  const handleMouseDownPassword = () => setShowPassword(!showPassword)
   const { first_name, last_name, email, phone, password, setLastName, setFirstName, setEmail, setPhone, setPassword } = useBuyerSignupFormStore()
   const { setToken, setUser, setWallet } = useCurrentUserStore()
   const signup = useMutation((userData) => LocalSignUp(userData))
