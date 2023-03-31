@@ -8,7 +8,7 @@ const BusinessWalletCard = () => {
   const [copied, setCopied] = useState(false)
 
   return (
-    <div className='bg-white shadow-8 rounded-lg font-medium h-auto w-[536px] p-6 flex flex-col space-y-6'>
+    <div className='bg-white shadow-8 rounded-lg font-medium h-auto w-[526px] p-6 flex flex-col space-y-6'>
       <div className='text-base'>
         <span>Wallet Information</span>
       </div>
