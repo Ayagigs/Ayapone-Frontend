@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
+import { MdContentCopy } from 'react-icons/md'
 import { useCurrentUserStore } from '../../../../store/currentUserStore'
 import { toast } from 'react-toastify'
 
 const BusinessWalletCard = () => {
   const { user, businessKyc } = useCurrentUserStore()
-  const [copied, setCopied] = useState(false)
+  const [ copied, setCopied ] = useState(false)
 
   return (
     <div className='bg-white shadow-8 rounded-lg font-medium h-auto w-[526px] p-6 flex flex-col space-y-6'>
@@ -21,7 +22,7 @@ const BusinessWalletCard = () => {
               text={businessKyc.wallet_address}
               onCopy={() => {setCopied(true); toast.success('Address Copied.', {autoClose: 1000, hideProgressBar: true})}}
             >
-              <span className='text-ayaPrimary-600'>Copy</span>
+              <span className='text-ayaPrimary-600'>Copy <MdContentCopy className='rotate-180'/></span>
             </CopyToClipboard>
           </span>
         </div>
