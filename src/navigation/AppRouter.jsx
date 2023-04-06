@@ -16,6 +16,7 @@ import NotificationPage from '../pages/app/Notification'
 import HomePage from '../pages/HomePage'
 import MerchantProductsPage from '../pages/app/merchant/Products'
 import OrdersPage from '../pages/app/merchant/Orders'
+import OrderInfoPage from '../pages/app/merchant/OrderedInfo'
 import PageNotFound from '../pages/PageNotFound'
 import PasswordResetPage from '../pages/auth/PasswordReset'
 import ProfilePage from '../pages/app/Profile'
@@ -60,6 +61,7 @@ const AppRouter = () => {
         <Route path={routes.PROFILE_PAGE} element={<ProfilePage />} />
         <Route path={routes.NOTIFICATION_PAGE} element={<NotificationPage />} />
         <Route path={routes.ORDERS_PAGE} element={<OrdersPage />} />
+        <Route path={routes.ORDER_INFO_PAGE} element={<OrderInfoPage />} />
 
       </Route>
 

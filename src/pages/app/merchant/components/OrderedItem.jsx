@@ -1,5 +1,6 @@
-import Ayp from '../../../../assets/icons/ayp.svg'
 import { HiArrowNarrowRight } from 'react-icons/hi'
+import { Link } from 'react-router-dom'
+import routes from '../../../../navigation/routes'
 
 const OrderedItem = ({
   name,
@@ -32,11 +33,12 @@ const OrderedItem = ({
           <div className='w-[74px] h-[28px] bg-ayaSuccess-100 text-ayaSuccess-200 text-center grid grid-cols-1 place-content-center rounded-lg'>Delivered</div>
         </div>
         <div className={`font-bold text-base w-full grid grid-cols-1 gap-1 place-content-center`}>
-          <button
+          <Link
+            to={`./12345678`}
             className='bg-white hover:bg-ayaPrimary-500 text-ayaPrimary-600 font-bold rounded-[8px] hover:text-white w-[186px] border border-ayaPrimary-200 h-[50px] flex space-x-2 justify-center items-center'
           >
             View Order <HiArrowNarrowRight className='ml-2' />
-          </button>
+          </Link>
         </div>
       </div>
     </div>
