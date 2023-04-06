@@ -7,6 +7,7 @@ export default Object.freeze({
   DASHBOARD_PAGE: 'dashboard',
   FORGOT_PASSWORD_PAGE: '/forgot-password',
   HOME_PAGE: '/',
+  MERCHANT_PRODUCT_CREATE_PAGE: 'products/create',
   MERCHANT_PRODUCT_PAGE: 'products',
   MERCHANT_SIGN_IN_PAGE: '/merchant/signin',
   MERCHANT_SIGN_UP_PAGE: '/merchant/signup',

@@ -14,6 +14,7 @@ import MerchantSignInPage from '../pages/auth/merchant/SignIn'
 import MerchantSignUpPage from '../pages/auth/merchant/SignUp'
 import NotificationPage from '../pages/app/Notification'
 import HomePage from '../pages/HomePage'
+import MerchantCreateProductPage from '../pages/app/merchant/CreateProduct'
 import MerchantProductsPage from '../pages/app/merchant/Products'
 import OrdersPage from '../pages/app/merchant/Orders'
 import OrderInfoPage from '../pages/app/merchant/OrderedInfo'
@@ -57,6 +58,7 @@ const AppRouter = () => {
       <Route path={'merchant'} element={<AppLayout />}>
         <Route path={routes.DASHBOARD_PAGE} element={<MerchantDashboardPage />} />
         <Route path={routes.MERCHANT_PRODUCT_PAGE} element={<MerchantProductsPage />} />
+        <Route path={routes.MERCHANT_PRODUCT_CREATE_PAGE} element={<MerchantCreateProductPage />} />
         <Route path={routes.WALLET_PAGE} element={<WalletPage />} />
         <Route path={routes.PROFILE_PAGE} element={<ProfilePage />} />
         <Route path={routes.NOTIFICATION_PAGE} element={<NotificationPage />} />

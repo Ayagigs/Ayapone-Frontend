@@ -1,5 +1,6 @@
 import DataTable from 'react-data-table-component'
 import { HiPlus } from 'react-icons/hi'
+import { Link } from 'react-router-dom'
 import DummyMerchantProducts from '../../../data/DummyMerchantProducts'
 
 const Products = () => {
@@ -58,11 +59,12 @@ const Products = () => {
               </select>
             </div>
             <div>
-              <button
+              <Link
+                to={`./create`}
                 className='bg-ayaPrimary-600 font-bold rounded-[8px] text-white w-[232px] h-[50px] flex space-x-2 justify-center items-center'
               >
                 <HiPlus /> Add New Product 
-              </button>
+              </Link>
             </div>
           </div>
           <div>
