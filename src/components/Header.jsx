@@ -1,6 +1,9 @@
 import NavBar from '../components/NavBar'
 import Carousel from 'react-multi-carousel'
-import SlideOne from '../components/home/SlideOne'
+import SlideOne from './home/slides/SlideOne'
+import SlideTwo from './home/slides/SlideTwo'
+import SlideThree from './home/slides/SlideThree'
+import SlideFour from './home/slides/SlideFour'
 
 const Header = () => {
   const responsive = {
@@ -26,11 +29,16 @@ const Header = () => {
   return (
     <header className=''>
       <NavBar />
-      <section className='min-h-[550px] pt-12 px-24 select-none bg-ayaNeutral-100'>
+      <section className='min-h-[550px] select-none bg-ayaNeutral-100'>
         <Carousel {...options}>
-          <SlideOne />
-          <SlideOne />
-          <SlideOne />
+          <div className='pt-12 px-24'>
+            <SlideOne />
+          </div>
+          <SlideTwo />
+          <div className='pt-12 px-24'>
+            <SlideThree />
+          </div>
+          <SlideFour />
         </Carousel>
       </section>
     </header>
