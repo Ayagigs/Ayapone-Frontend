@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import HeroImage from '../../assets/images/hero_image_01.svg'
-import routes from '../../navigation/routes'
+import HeroImage from '../../../assets/images/slides/hero_image_01.svg'
+import routes from '../../../navigation/routes'
 
 const SlideOne = () => {
   return (
