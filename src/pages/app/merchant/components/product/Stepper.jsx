@@ -23,12 +23,6 @@ const Stepper = () => {
           index={3}
           isActive={activeStep == 3}
           isPast={activeStep > 3}
-        />
-        <Step
-          title='Images'
-          index={4}
-          isActive={activeStep == 4}
-          isPast={activeStep > 4}
           isLast={true}
         />
       </ol>    

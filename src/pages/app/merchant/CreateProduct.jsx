@@ -2,6 +2,7 @@ import { HiPlus } from 'react-icons/hi'
 import Stepper from './components/product/Stepper'
 import FormOne from './components/product/FormOne'
 import FormTwo from './components/product/FormTwo'
+import FormThree from './components/product/FormThree'
 import { useProductCreateStore } from '../../../store/productCreateStore'
 
 const CreateProduct = () => {
@@ -14,6 +15,7 @@ const CreateProduct = () => {
 
           {activeStep == 1 && <FormOne />}
           {activeStep == 2 && <FormTwo />}
+          {activeStep == 3 && <FormThree />}
           
         </div>
       {/* </div> */}

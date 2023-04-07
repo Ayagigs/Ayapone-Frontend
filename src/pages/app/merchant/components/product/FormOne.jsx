@@ -4,16 +4,18 @@ import ProductBrands from '../../../../../data/ProductBrands'
 import ProductCategories from '../../../../../data/ProductCategories'
 import ProductAvailability from '../../../../../data/ProductAvailability'
 import { useMerchantSignupStore } from '../../../../../store/merchantSignupStore'
+import { useProductCreateStore } from '../../../../../store/productCreateStore'
 import { toast } from 'react-toastify'
 
 const FormOne = () => {
-  const { email, first_name, business_type, last_name, phone, password, setLastName, setFirstName, setEmail, setPhone, setPassword, activeStep, setActiveStep } = useMerchantSignupStore()
+  const { email, first_name, business_type, last_name, phone, password, setLastName, setFirstName, setEmail, setPhone, setPassword } = useMerchantSignupStore()
+  const { activeStep, setActiveStep } = useProductCreateStore()
   const next = () => {
     setActiveStep(activeStep+1)
   }
   return (
     <>
-      <h3>Product Information</h3>
+      <h3 className='text-center'>Product Information</h3>
 
       <InputBox name={'name'} width={'w-full'} label={'Product Name'} isCompulsory={true} placeholder={'Product Name'} value={first_name} onChange={(e) => setFirstName(e.target.value)} />
 
@@ -62,12 +64,14 @@ const FormOne = () => {
         ></textarea>
       </div>
 
-      <button 
-        className='bg-ayaPrimary-600 font-bold rounded-[8px] mt-12 text-white w-[426px] h-[50px] flex space-x-2 justify-center items-center'
-        onClick={() => next()}
-      >
-        Save & Continue <HiArrowNarrowRight />
-      </button>
+      <div className='flex flex-row space-x-4 justify-end'>
+        <button 
+          className='bg-ayaPrimary-600 font-bold rounded-[8px] text-white w-[228px] h-[50px] flex space-x-2 justify-center items-center'
+          onClick={() => next()}
+        >
+          Save & Continue <HiArrowNarrowRight />
+        </button>
+      </div>
     </>
   )
 }
