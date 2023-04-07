@@ -17,60 +17,39 @@ const FormOne = () => {
 
       <InputBox name={'name'} width={'w-full'} label={'Product Name'} isCompulsory={true} placeholder={'Product Name'} value={first_name} onChange={(e) => setFirstName(e.target.value)} />
 
-      <div className="flex flex-wrap -mx-3 mb-6">
-        <div className="w-full md:w-1/2 px-3">
-          <div className="mt-6 ">
-            <label className="text-sm text-ayaNeutral-900 font-normal mb-4" htmlFor={'brand'}>
-              Brand<span className="text-ayaDanger-200">*</span>
-            </label>
-            <select id="brand" className="text-gray-900 focus:ring-blue-500 flex h-[54px] bg-white text-sm border rounded-lg border-ayaNeutral-600 w-full outline-none px-6 placeholder:text-ayaNeutral-500 placeholder:text-sm" name='business_type' onChange={(e) => setBusinessType(e.target.value)}>
-              <option defaultValue={`selected`}>Select Brand</option>
-              {ProductBrands.map((item, index) => {
-                return (item.id == business_type) ? <option key={index} value={item.id} selected='selected'>{item.name}</option> : <option key={index} value={item.id}>{item.name}</option>
-              })}
-            </select>
-          </div>
-        </div>
-        <div className="w-full md:w-1/2 px-3">
-          <div className="mt-6 ">
-            <label className="text-sm text-ayaNeutral-900 font-normal mb-4" htmlFor={'brand'}>
-              Category<span className="text-ayaDanger-200">*</span>
-            </label>
-            <select id="brand" className="text-gray-900 focus:ring-blue-500 flex h-[54px] bg-white text-sm border rounded-lg border-ayaNeutral-600 w-full outline-none px-6 placeholder:text-ayaNeutral-500 placeholder:text-sm" name='business_type' onChange={(e) => setBusinessType(e.target.value)}>
-              <option defaultValue={`selected`}>Select Category</option>
-              {ProductCategories.map((item, index) => {
-                return (item.id == business_type) ? <option key={index} value={item.id} selected='selected'>{item.name}</option> : <option key={index} value={item.id}>{item.name}</option>
-              })}
-            </select>
-          </div>
-        </div>
+      <div className="mt-6">
+        <label className="text-sm text-ayaNeutral-900 font-normal mb-4" htmlFor={'brand'}>
+          Brand<span className="text-ayaDanger-200">*</span>
+        </label>
+        <select id="brand" className="text-gray-900 focus:ring-blue-500 flex h-[54px] bg-white text-sm border rounded-lg border-ayaNeutral-600 w-full outline-none px-6 placeholder:text-ayaNeutral-500 placeholder:text-sm" name='business_type' onChange={(e) => setBusinessType(e.target.value)}>
+          <option defaultValue={`selected`}>Select Brand</option>
+          {ProductBrands.map((item, index) => {
+            return (item.id == business_type) ? <option key={index} value={item.id} selected='selected'>{item.name}</option> : <option key={index} value={item.id}>{item.name}</option>
+          })}
+        </select>
       </div>
 
-      <div className="flex flex-wrap -mx-3 mb-6">
-        <div className="w-full md:w-1/2 px-3">
-          <div className="mt-6 ">
-            <label className="text-sm text-ayaNeutral-900 font-normal mb-4" htmlFor={'brand'}>
-              Product Availability<span className="text-ayaDanger-200">*</span>
-            </label>
-            <select id="brand" className="text-gray-900 focus:ring-blue-500 flex h-[54px] bg-white text-sm border rounded-lg border-ayaNeutral-600 w-full outline-none px-6 placeholder:text-ayaNeutral-500 placeholder:text-sm" name='business_type' onChange={(e) => setBusinessType(e.target.value)}>
-              {ProductAvailability.map((item, index) => {
-                return (item.id == business_type) ? <option key={index} value={item.id} selected='selected'>{item.name}</option> : <option key={index} value={item.id}>{item.name}</option>
-              })}
-            </select>
-          </div>
-        </div>
-        <div className="w-full md:w-1/2 px-3">
-          <InputBox name={'quantity'} width={'w-full'} label={'Quantity'} isCompulsory={true} placeholder={'Quantity'} value={last_name} onChange={(e) => setLastName(e.target.value)} />
-        </div>
+      <div className="mt-6 ">
+        <label className="text-sm text-ayaNeutral-900 font-normal mb-4" htmlFor={'brand'}>
+          Category<span className="text-ayaDanger-200">*</span>
+        </label>
+        <select id="brand" className="text-gray-900 focus:ring-blue-500 flex h-[54px] bg-white text-sm border rounded-lg border-ayaNeutral-600 w-full outline-none px-6 placeholder:text-ayaNeutral-500 placeholder:text-sm" name='business_type' onChange={(e) => setBusinessType(e.target.value)}>
+          <option defaultValue={`selected`}>Select Category</option>
+          {ProductCategories.map((item, index) => {
+            return (item.id == business_type) ? <option key={index} value={item.id} selected='selected'>{item.name}</option> : <option key={index} value={item.id}>{item.name}</option>
+          })}
+        </select>
       </div>
-      <div className="flex flex-wrap -mx-3 mb-6">
-        <div className="w-full md:w-1/2 px-3">
-          <InputBox name={'name'} width={'w-full'} label={'Product Name'} isCompulsory={true} placeholder={'Product Name'} value={first_name} onChange={(e) => setFirstName(e.target.value)} />
-          {/* <p className="text-red-500 text-xs italic">Please fill out this field.</p> */}
-        </div>
-        <div className="w-full md:w-1/2 px-3">
-          <InputBox name={'last_name'} width={'w-full'} label={'Last Name'} isCompulsory={true} placeholder={'Last Name'} value={last_name} onChange={(e) => setLastName(e.target.value)} />
-        </div>
+
+      <div className="mt-6 ">
+        <label className="text-sm text-ayaNeutral-900 font-normal mb-4" htmlFor={'brand'}>
+          Product Availability<span className="text-ayaDanger-200">*</span>
+        </label>
+        <select id="brand" className="text-gray-900 focus:ring-blue-500 flex h-[54px] bg-white text-sm border rounded-lg border-ayaNeutral-600 w-full outline-none px-6 placeholder:text-ayaNeutral-500 placeholder:text-sm" name='business_type' onChange={(e) => setBusinessType(e.target.value)}>
+          {ProductAvailability.map((item, index) => {
+            return (item.id == business_type) ? <option key={index} value={item.id} selected='selected'>{item.name}</option> : <option key={index} value={item.id}>{item.name}</option>
+          })}
+        </select>
       </div>
 
       <div className="mt-6 ">

@@ -11,19 +11,25 @@ const FormTwo = () => {
   return (
     <>
       <h3>Product Pricing</h3>
-      <div className="flex flex-wrap -mx-3 mb-6">
-        <div className="w-full md:w-1/2 px-3">
-          <InputBox name={'name'} width={'w-full'} label={'Product Name'} isCompulsory={true} placeholder={'Product Name'} value={first_name} onChange={(e) => setFirstName(e.target.value)} />
-          {/* <p className="text-red-500 text-xs italic">Please fill out this field.</p> */}
+      <InputBox name={'price'} width={'w-full'} label={'Your Price'} isCompulsory={true} placeholder={'Price'} value={first_name} onChange={(e) => setFirstName(e.target.value)} />
+      
+      <InputBox name={'delivery_timeline'} width={'w-full'} label={'Delivery Timeline'} isCompulsory={true} placeholder={'How long will it take to deliver'} value={first_name} onChange={(e) => setFirstName(e.target.value)} />
+
+      <div className="mt-6 ">
+        <label className="text-sm text-ayaNeutral-900 font-normal mb-4" htmlFor={'brand'}>
+          Fulfillment Channel<span className="text-ayaDanger-200">*</span>
+        </label>
+        <div className='w-full'>
+          <label className="mb-4">
+            <input type="radio" name="fulfillment_channel" id="" className='' /> I will ship this item myself (Merchant fulfilled)
+          </label>
         </div>
-        <div className="w-full md:w-1/2 px-3">
-          <InputBox name={'last_name'} width={'w-full'} label={'Last Name'} isCompulsory={true} placeholder={'Last Name'} value={last_name} onChange={(e) => setLastName(e.target.value)} />
+        <div className='w-full'>
+          <label className="mb-4">
+            <input type="radio" name="fulfillment_channel" id="" className='' /> Ayapone will ship and provide customer services
+          </label>
         </div>
       </div>
-
-      <InputBox name={'email'} label={'Email Address'} isCompulsory={true} type={'email'} placeholder={'Email Address'} value={email} onChange={(e) => setEmail(e.target.value)} />
-      <InputBox name={'phone'} label={'Phone Number'} isCompulsory={true} placeholder={'Phone Number'} value={phone} onChange={(e) => setPhone(e.target.value)} />
-      <InputBox name={'password'} label={'Password'} isCompulsory={true} type={'password'} placeholder={'Password'} value={password} onChange={(e) => setPassword(e.target.value)} />
 
       <button 
         className='bg-ayaPrimary-600 font-bold rounded-[8px] mt-12 text-white w-[426px] h-[50px] flex space-x-2 justify-center items-center'

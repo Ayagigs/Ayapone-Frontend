@@ -20,10 +20,10 @@ const Products = () => {
       selector: row => row.date,
       sortable: true,
     },
-    {
-      name: 'Quantity Confirmed',
-      selector: row => row.quantityConfirmed,
-    },
+    // {
+    //   name: 'Quantity Confirmed',
+    //   selector: row => row.quantityConfirmed,
+    // },
     {
       name: 'Quantity Sold',
       selector: row => row.quantitySold,
