@@ -70,11 +70,17 @@ const FormThree = () => {
       </div>
 
       <div className='flex flex-row space-x-4 justify-end'>
+        <button
+          className='bg-ayaPrimary-100 font-bold rounded-[8px] text-ayaPrimary-600 w-[102px] h-[50px] flex space-x-2 justify-center items-center border border-ayaPrimary-600/20'
+          onClick={() => setActiveStep(activeStep-1)}
+        >
+          Back
+        </button>
         <button 
           className='bg-ayaPrimary-600 font-bold rounded-lg text-white w-[228px] h-[50px] flex space-x-2 justify-center items-center'
           onClick={() => next()}
         >
-          Done
+          Save & Continue <HiArrowNarrowRight />
         </button>
       </div>
     </>

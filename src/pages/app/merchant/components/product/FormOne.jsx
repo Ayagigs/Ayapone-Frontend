@@ -35,7 +35,7 @@ const FormOne = () => {
         <label className="text-sm text-ayaNeutral-900 font-normal mb-4" htmlFor={'brand'}>
           Category<span className="text-ayaDanger-200">*</span>
         </label>
-        <select id="brand" className="text-gray-900 focus:ring-blue-500 flex h-[54px] bg-white text-sm border rounded-lg border-ayaNeutral-600 w-full outline-none px-6 placeholder:text-ayaNeutral-500 placeholder:text-sm" name='business_type' onChange={(e) => setBusinessType(e.target.value)}>
+        <select id="category" className="text-gray-900 focus:ring-blue-500 flex h-[54px] bg-white text-sm border rounded-lg border-ayaNeutral-600 w-full outline-none px-6 placeholder:text-ayaNeutral-500 placeholder:text-sm" name='category' onChange={(e) => setBusinessType(e.target.value)}>
           <option defaultValue={`selected`}>Select Category</option>
           {ProductCategories.map((item, index) => {
             return (item.id == business_type) ? <option key={index} value={item.id} selected='selected'>{item.name}</option> : <option key={index} value={item.id}>{item.name}</option>
@@ -44,10 +44,10 @@ const FormOne = () => {
       </div>
 
       <div className="mt-6 ">
-        <label className="text-sm text-ayaNeutral-900 font-normal mb-4" htmlFor={'brand'}>
+        <label className="text-sm text-ayaNeutral-900 font-normal mb-4" htmlFor={'product_availability'}>
           Product Availability<span className="text-ayaDanger-200">*</span>
         </label>
-        <select id="brand" className="text-gray-900 focus:ring-blue-500 flex h-[54px] bg-white text-sm border rounded-lg border-ayaNeutral-600 w-full outline-none px-6 placeholder:text-ayaNeutral-500 placeholder:text-sm" name='business_type' onChange={(e) => setBusinessType(e.target.value)}>
+        <select id="product_availability" className="text-gray-900 focus:ring-blue-500 flex h-[54px] bg-white text-sm border rounded-lg border-ayaNeutral-600 w-full outline-none px-6 placeholder:text-ayaNeutral-500 placeholder:text-sm" name='product_availability' onChange={(e) => setBusinessType(e.target.value)}>
           {ProductAvailability.map((item, index) => {
             return (item.id == business_type) ? <option key={index} value={item.id} selected='selected'>{item.name}</option> : <option key={index} value={item.id}>{item.name}</option>
           })}
