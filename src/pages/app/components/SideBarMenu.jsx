@@ -16,6 +16,21 @@ const SideBarMenu = () => {
     toast.success('You have logged out.')
     navigate(routes.HOME_PAGE)
   }
+
+  let activeUserStyle, userStyle
+  if (user.user_role == 'buyer') {
+    activeUserStyle = 'hover:bg-ayaPrimary-200 hover:text-ayaPrimary-600 bg-ayaPrimary-600'
+    userStyle = 'hover:bg-ayaPrimary-200'
+  }
+  if (user.user_role == 'merchant') {
+    activeUserStyle = 'hover:bg-ayaNeutral-200 hover:text-ayaNeutral-900 bg-ayaNeutral-900'
+    userStyle = 'hover:bg-ayaNeutral-200'
+  }
+  if (user.user_role == 'admin') {
+    activeUserStyle = 'hover:bg-ayaNeutral-200 hover:text-ayaNeutral-900 bg-ayaNeutral-500'
+    userStyle = 'hover:bg-ayaNeutral-200'
+  }
+
   return (
     <aside className="w-64 h-screen bg-white px-6 text-ayaNeutral-900 sticky top-0">
       <div className='py-7 pl-6'>
@@ -29,13 +44,13 @@ const SideBarMenu = () => {
           return item.for.includes(user.user_role) ?
             pathname.includes(item.path) ? (
               <Link key={index} to={item.path}>
-                <li className={`h-14 py-4 pl-6 rounded-lg flex items-center text-white ${user.user_role == 'merchant' ?`hover:bg-ayaNeutral-200 hover:text-ayaNeutral-900 bg-ayaNeutral-900` : `hover:bg-ayaPrimary-200 hover:text-ayaPrimary-600 bg-ayaPrimary-600`}`}>
+                <li className={`h-14 py-4 pl-6 rounded-lg flex items-center text-white ${activeUserStyle}`}>
                   {item.icon}<span className='ml-4 '>{item.title}</span>
                 </li>
               </Link>
             ) : (
               <Link key={index} to={item.path}>
-                <li className={`h-14 py-4 pl-6 rounded-lg flex items-center ${user.user_role == 'merchant' ?`hover:bg-ayaNeutral-200` : `hover:bg-ayaPrimary-200`}`}>
+                <li className={`h-14 py-4 pl-6 rounded-lg flex items-center ${userStyle}`}>
                   {item.icon}<span className='ml-4 '>{item.title}</span>
                 </li>
               </Link>

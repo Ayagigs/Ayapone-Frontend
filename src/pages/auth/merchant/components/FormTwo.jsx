@@ -47,12 +47,12 @@ const FormTwo = () => {
 
       <div className='text-sm mt-6'>
         <p className='font-bold pb-4'>File size must NOT exceed 512KB in jpg/jpeg/png</p>
-        <div className='flex items-center'>
-          <div className='flex items-center w-[154px] h-[118px] bg-ayaNeutral-100 border border-ayaNeutral-300 rounded-2xl'>
+        <div className='flex items-center justify-center space-x-6'>
+          <div className='flex items-center justify-center flex-col w-[154px] h-[118px] bg-ayaNeutral-100 border border-ayaNeutral-300 rounded-2xl'>
             <MdPhotoCameraBack /><br/>
             Upload Front Page
           </div>
-          <div className='flex items-center w-[154px] h-[118px] bg-ayaNeutral-100 border border-ayaNeutral-300 rounded-2xl'>
+          <div className='flex items-center justify-center flex-col w-[154px] h-[118px] bg-ayaNeutral-100 border border-ayaNeutral-300 rounded-2xl'>
             <MdPhotoCameraBack /><br/>
             Upload Back Page
           </div>

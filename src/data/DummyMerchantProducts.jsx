@@ -5,7 +5,7 @@ const DummyMerchantProducts = [
     productName: 'Beetlejuice',
     status: 'Available',
     date: '01/03/23',
-    quantityConfirmed: 450,
+    // quantityConfirmed: 450,
     quantitySold: 28,
     pendingOrders: 15,
     earnings: '14,543 AYP'
@@ -15,7 +15,7 @@ const DummyMerchantProducts = [
     productName: 'Beetlejuice',
     status: 'Available',
     date: '01/03/23',
-    quantityConfirmed: 450,
+    // quantityConfirmed: 450,
     quantitySold: 28,
     pendingOrders: 15,
     earnings: '14,543 AYP'
@@ -25,7 +25,7 @@ const DummyMerchantProducts = [
     productName: 'Beetlejuice',
     status: 'Available',
     date: '01/03/23',
-    quantityConfirmed: 450,
+    // quantityConfirmed: 450,
     quantitySold: 28,
     pendingOrders: 15,
     earnings: '14,543 AYP'
@@ -35,7 +35,7 @@ const DummyMerchantProducts = [
     productName: 'Beetlejuice',
     status: 'Available',
     date: '01/03/23',
-    quantityConfirmed: 450,
+    // quantityConfirmed: 450,
     quantitySold: 28,
     pendingOrders: 15,
     earnings: '14,543 AYP'
@@ -45,7 +45,7 @@ const DummyMerchantProducts = [
     productName: 'Beetlejuice',
     status: 'Available',
     date: '01/03/23',
-    quantityConfirmed: 450,
+    // quantityConfirmed: 450,
     quantitySold: 28,
     pendingOrders: 15,
     earnings: '14,543 AYP'
@@ -55,7 +55,7 @@ const DummyMerchantProducts = [
     productName: 'Beetlejuice',
     status: 'Out of stock',
     date: '01/03/23',
-    quantityConfirmed: 450,
+    // quantityConfirmed: 450,
     quantitySold: 28,
     pendingOrders: 15,
     earnings: '14,543 AYP'
@@ -65,7 +65,7 @@ const DummyMerchantProducts = [
     productName: 'Beetlejuice',
     status: 'Out of stock',
     date: '01/03/23',
-    quantityConfirmed: 450,
+    // quantityConfirmed: 450,
     quantitySold: 28,
     pendingOrders: 15,
     earnings: '14,543 AYP'
@@ -75,7 +75,7 @@ const DummyMerchantProducts = [
     productName: 'Beetlejuice',
     status: 'Available',
     date: '01/03/23',
-    quantityConfirmed: 450,
+    // quantityConfirmed: 450,
     quantitySold: 28,
     pendingOrders: 15,
     earnings: '14,543 AYP'
@@ -85,7 +85,7 @@ const DummyMerchantProducts = [
     productName: 'Beetlejuice',
     status: 'Out of stock',
     date: '01/03/23',
-    quantityConfirmed: 450,
+    // quantityConfirmed: 450,
     quantitySold: 28,
     pendingOrders: 15,
     earnings: '14,543 AYP'
@@ -95,7 +95,7 @@ const DummyMerchantProducts = [
     productName: 'Beetlejuice',
     status: 'Available',
     date: '01/03/23',
-    quantityConfirmed: 450,
+    // quantityConfirmed: 450,
     quantitySold: 28,
     pendingOrders: 15,
     earnings: '14,543 AYP'
@@ -105,7 +105,7 @@ const DummyMerchantProducts = [
     productName: 'Beetlejuice',
     status: 'Available',
     date: '01/03/23',
-    quantityConfirmed: 450,
+    // quantityConfirmed: 450,
     quantitySold: 28,
     pendingOrders: 15,
     earnings: '14,543 AYP'
@@ -115,7 +115,7 @@ const DummyMerchantProducts = [
     productName: 'Beetlejuice',
     status: 'Available',
     date: '01/03/23',
-    quantityConfirmed: 450,
+    // quantityConfirmed: 450,
     quantitySold: 28,
     pendingOrders: 15,
     earnings: '14,543 AYP'
