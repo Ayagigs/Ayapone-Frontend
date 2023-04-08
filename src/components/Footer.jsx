@@ -39,6 +39,9 @@ const Footer = () => {
             <li>
               <Link to={routes.TERMS_AND_CONDITION_PAGE}>Terms and Conditions</Link>
             </li>
+            <li>
+              <Link to={routes.ADMIN_SIGN_IN_PAGE}>Admin</Link>
+            </li>
           </ul>
         </div>
         <div className='space-y-10'>
