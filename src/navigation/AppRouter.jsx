@@ -5,6 +5,11 @@ import routes from './routes'
 import AdminDashboardPage from '../pages/app/admin/Dashboard'
 import AdminSignInPage from '../pages/auth/admin/SignIn'
 import AdminVerifySelfPage from '../pages/auth/admin/VerifySignIn'
+import AdminViewAdminsPage from '../pages/app/admin/Admins'
+import AdminViewBuyersPage from '../pages/app/admin/Buyers'
+import AdminViewMerchantsPage from '../pages/app/admin/Merchants'
+import AdminViewProductsInsightPage from '../pages/app/admin/ProductInsight'
+import AdminViewOrderInsightPage from '../pages/app/admin/OrderInsight'
 import AppLayout from '../pages/app/AppLayout'
 import BuyerDashboardPage from '../pages/app/buyer/Dashboard'
 import BuyerSignInPage from '../pages/auth/buyer/SignIn'
@@ -50,7 +55,13 @@ const AppRouter = () => {
       <Route path={'admin'} element={<AppLayout />}>
         <Route path={routes.DASHBOARD_PAGE} element={<AdminDashboardPage />} />
         <Route path={routes.PROFILE_PAGE} element={<ProfilePage />} />
+        <Route path={routes.ADMIN_VIEW_ADMINS_PAGE} element={<AdminViewAdminsPage />} />
+        <Route path={routes.ADMIN_VIEW_BUYERS_PAGE} element={<AdminViewBuyersPage />} />
+        <Route path={routes.ADMIN_VIEW_INSIGHT_ORDERS_PAGE} element={<AdminViewOrderInsightPage />} />
+        <Route path={routes.ADMIN_VIEW_INSIGHT_PRODUCTS_PAGE} element={<AdminViewProductsInsightPage />} />
+        <Route path={routes.ADMIN_VIEW_MERCHANTS_PAGE} element={<AdminViewMerchantsPage />} />
         <Route path={routes.NOTIFICATION_PAGE} element={<NotificationPage />} />
+        <Route path={routes.WALLET_PAGE} element={<WalletPage />} />
 
       </Route>
 

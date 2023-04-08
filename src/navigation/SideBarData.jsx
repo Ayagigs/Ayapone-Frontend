@@ -16,7 +16,7 @@ const sideBarData = [
   {
     icon: <FiArchive />,
     title: 'Products Insights',
-    path: routes.MERCHANT_PRODUCT_PAGE,
+    path: routes.ADMIN_VIEW_INSIGHT_PRODUCTS_PAGE,
     for: ['admin']
   },
   {
@@ -40,7 +40,7 @@ const sideBarData = [
   {
     icon: <SlCalender />,
     title: 'Orders Insight',
-    path: routes.ORDERS_PAGE,
+    path: routes.ADMIN_VIEW_INSIGHT_ORDERS_PAGE,
     for: ['admin']
   },
   {
@@ -64,19 +64,19 @@ const sideBarData = [
   {
     icon: <CgProfile />,
     title: 'Admins',
-    path: routes.PROFILE_PAGE,
+    path: routes.ADMIN_VIEW_ADMINS_PAGE,
     for: ['admin']
   },
   {
     icon: <CgProfile />,
     title: 'Merchants',
-    path: routes.PROFILE_PAGE,
+    path: routes.ADMIN_VIEW_MERCHANTS_PAGE,
     for: ['admin']
   },
   {
     icon: <CgProfile />,
     title: 'Buyers',
-    path: routes.PROFILE_PAGE,
+    path: routes.ADMIN_VIEW_BUYERS_PAGE,
     for: ['admin']
   },
   {
