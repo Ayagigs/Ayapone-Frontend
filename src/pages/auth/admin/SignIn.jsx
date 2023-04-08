@@ -8,6 +8,7 @@ import { useMutation } from '@tanstack/react-query'
 import { toast } from 'react-toastify'
 
 const SignIn = () => {
+  const [email, setEmail] = useState('')
   const signin = useMutation((adminData) => AdminSignIn(adminData))
   const navigate = useNavigate()
 
