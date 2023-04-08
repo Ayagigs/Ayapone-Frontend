@@ -20,3 +20,8 @@ export const ResetPassword = async (data) =>
 export const RegenerateJwt = async (data) =>
   await baseApi.post(`${AuthPath}/regenerate-token`, data)
 
+export const AdminSignIn = async (data) =>
+  await baseApi.post(`${AuthPath}/admin/request-login`, data)
+
+export const AdminSignInVerify = async (data) =>
+  await baseApi.post(`${AuthPath}/admin/verify-key`, data)

@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import routes from './routes'
 
 import AdminSignInPage from '../pages/auth/admin/SignIn'
+import AdminVerifySelfPage from '../pages/auth/admin/VerifySignIn'
 import AppLayout from '../pages/app/AppLayout'
 import BuyerDashboardPage from '../pages/app/buyer/Dashboard'
 import BuyerSignInPage from '../pages/auth/buyer/SignIn'
@@ -34,6 +35,7 @@ const AppRouter = () => {
     <Routes>
       <Route path={routes.HOME_PAGE} element={<HomePage />} />
       <Route path={routes.ADMIN_SIGN_IN_PAGE} element={<AdminSignInPage />} />
+      <Route path={routes.ADMIN_VERIFY_SELF_PAGE} element={<AdminVerifySelfPage />} />
       <Route path={routes.BUYER_SIGN_IN_PAGE} element={<BuyerSignInPage />} />
       <Route path={routes.BUYER_SIGN_UP_PAGE} element={<BuyerSignUpPage />} />
       <Route path={routes.MERCHANT_SIGN_IN_PAGE} element={<MerchantSignInPage />} />
