@@ -3,7 +3,7 @@ import { HiPlus } from 'react-icons/hi'
 import { Link } from 'react-router-dom'
 import DummyMerchantProducts from '../../../data/DummyMerchantProducts'
 
-const Products = () => {
+const Buyers = () => {
   const columns = [
     {
       name: 'Product Name',
@@ -58,14 +58,6 @@ const Products = () => {
                 <option value="">Oldest</option>
               </select>
             </div>
-            <div>
-              <Link
-                to={`./create`}
-                className='bg-ayaPrimary-600 font-bold rounded-[8px] text-white w-[232px] h-[50px] flex space-x-2 justify-center items-center'
-              >
-                <HiPlus /> Add New Product 
-              </Link>
-            </div>
           </div>
           <div>
             <DataTable
@@ -81,4 +73,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default Buyers;

@@ -8,4 +8,9 @@ export const baseApi = create({
   headers: {
     'Content-Type': 'application/json',
   },
-});
+})
+
+export const token = () => {
+  const currentUser = JSON.parse(localStorage.getItem('currentUserStore'))
+  return currentUser.state.token
+}

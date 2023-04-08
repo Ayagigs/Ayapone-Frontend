@@ -3,7 +3,7 @@ import { HiPlus } from 'react-icons/hi'
 import { Link } from 'react-router-dom'
 import DummyMerchantProducts from '../../../data/DummyMerchantProducts'
 
-const Products = () => {
+const Admins = () => {
   const columns = [
     {
       name: 'Product Name',
@@ -20,10 +20,6 @@ const Products = () => {
       selector: row => row.date,
       sortable: true,
     },
-    // {
-    //   name: 'Quantity Confirmed',
-    //   selector: row => row.quantityConfirmed,
-    // },
     {
       name: 'Quantity Sold',
       selector: row => row.quantitySold,
@@ -63,7 +59,7 @@ const Products = () => {
                 to={`./create`}
                 className='bg-ayaPrimary-600 font-bold rounded-[8px] text-white w-[232px] h-[50px] flex space-x-2 justify-center items-center'
               >
-                <HiPlus /> Add New Product 
+                <HiPlus /> Add New Admin 
               </Link>
             </div>
           </div>
@@ -81,4 +77,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default Admins;
