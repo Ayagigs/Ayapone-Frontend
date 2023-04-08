@@ -1,22 +1,19 @@
 import InputBox from '../../../../../components/forms/InputBox'
 import { HiArrowNarrowRight } from 'react-icons/hi'
-import { useMerchantSignupStore } from '../../../../../store/merchantSignupStore'
 import { useProductCreateStore } from '../../../../../store/productCreateStore'
 import { toast } from 'react-toastify'
 
-const FormTwo = () => {
-  const { email, first_name, last_name, phone, password, setLastName, setFirstName, setEmail, setPhone, setPassword } = useMerchantSignupStore()
-  
-  const { activeStep, setActiveStep } = useProductCreateStore()
+const FormTwo = () => {  
+  const { price, delivery, activeStep, setActiveStep, setPrice, setDelivery } = useProductCreateStore()
   const next = () => {
     setActiveStep(activeStep+1)
   }
   return (
     <>
       <h3 className='text-center'>Product Pricing</h3>
-      <InputBox name={'price'} width={'w-full'} label={'Your Price'} isCompulsory={true} placeholder={'Price'} value={first_name} onChange={(e) => setFirstName(e.target.value)} />
+      <InputBox name={'price'} width={'w-full'} label={'Your Price'} isCompulsory={true} placeholder={'Price'} value={price} onChange={(e) => setPrice(e.target.value)} />
       
-      <InputBox name={'delivery_timeline'} width={'w-full'} label={'Delivery Timeline'} isCompulsory={true} placeholder={'How long will it take to deliver'} value={first_name} onChange={(e) => setFirstName(e.target.value)} />
+      <InputBox name={'delivery'} width={'w-full'} label={'Delivery Timeline (eg. 7 days)'} isCompulsory={true} placeholder={'How long will it take to deliver'} value={delivery} onChange={(e) => setDelivery(e.target.value)} />
 
       <div className="mt-6 ">
         <label className="text-sm text-ayaNeutral-900 font-normal mb-4" htmlFor={'brand'}>

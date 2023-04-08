@@ -1,18 +1,42 @@
 import React, { useRef } from 'react'
-import { TiTimes } from 'react-icons/ti'
 import { Editor } from '@tinymce/tinymce-react'
 import { useProductCreateStore } from '../../../../../store/productCreateStore'
+import { CreateProduct } from '../../../../../api/productApi'
+import { useMutation } from '@tanstack/react-query'
 import { toast } from 'react-toastify'
 
 const FormFour = () => {
-  const { overview, specification, activeStep, setActiveStep, setOverview, setSpecification } = useProductCreateStore()
+  const { name, brand, category, description, product_availability, price, delivery, images, filesForUpload, overview, specification, activeStep, setActiveStep, setOverview, setSpecification, setImages } = useProductCreateStore()
+  const createNewProductRequest = useMutation((productData) => CreateProduct(productData))
 
-  const overviewRef = useRef(null)
-  const specificationRef = useRef(null)
-  setInterval(() => {
-    // setOverview(overviewRef.current.getContent())
+  // const overviewRef = useRef(null)
+  // const specificationRef = useRef(null)
+  // setInterval(() => {
+  //   setOverview(overviewRef.current.getContent())
   //   setSpecification(specificationRef.current.getContent())
-  }, 1000);
+  // }, 1000);
+
+  const handleSubmit = async () => {
+    setImages(filesForUpload)
+    // const formData = new FormData();
+    // for (const file of files) {
+    //     formData.append(file.name, file);
+    // }
+    try {
+      const response = await createNewProductRequest.mutateAsync({ name, brand, category, description, product_availability, price, delivery, images, overview, specification })
+      if (response) {
+        console.log(response)
+        if (response.ok) {
+          toast.success(response.data.message)
+        } else {
+          toast.error(response.data?.message || response.problem)
+        }
+      }
+    } catch (error) {
+      toast.error('an error occured!')
+      console.log('error is: ', error)
+    }
+  }
 
   return (
     <>
@@ -85,7 +109,7 @@ const FormFour = () => {
         </button>
         <button 
           className='bg-ayaPrimary-600 font-bold rounded-lg text-white w-[228px] h-[50px] flex space-x-2 justify-center items-center'
-          
+          onClick={() => handleSubmit()}
         >
           Done
         </button>

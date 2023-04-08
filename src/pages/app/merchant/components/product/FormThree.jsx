@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { HiArrowNarrowRight } from 'react-icons/hi'
 import { MdPhotoCameraBack } from 'react-icons/md'
 import { TiTimes } from 'react-icons/ti'
@@ -7,10 +7,12 @@ import { toast } from 'react-toastify'
 import useFileUpload from 'react-use-file-upload'
 
 const FormThree = () => {
-  const { activeStep, setActiveStep } = useProductCreateStore()
+  const { filesForUpload, activeStep, setActiveStep, setFilesForUpload } = useProductCreateStore()
   const next = () => {
     setActiveStep(activeStep+1)
   }
+
+  const [hasFiles, setHasFiles] = useState(false)
 
   const {
     files,
@@ -21,6 +23,36 @@ const FormThree = () => {
   } = useFileUpload()
 
   const inputRef = useRef()
+
+  const handleFiles = (e) => {
+    setFiles(e, 'a')
+    inputRef.current.value = null
+  }
+
+  // useEffect(() => {
+  //   if (files.length > 0) {
+  //     setFilesForUpload(files)
+  //   }
+  // }, [files, setFilesForUpload])
+
+  useEffect(() => {
+    if (hasFiles) {
+      return
+    }
+    if (filesForUpload.length > 0) {
+      setHasFiles(true)
+      // setFiles(filesForUpload, 'a')
+    }
+  }, [hasFiles, filesForUpload, setFiles])
+
+  useEffect(() => {
+    if (files.length > 0) {
+      setFilesForUpload(files)
+    }
+  }, [files, setFilesForUpload])
+
+  console.log('files: ', files);
+  console.log('filesForUpload: ', filesForUpload);
 
   return (
     <>
@@ -50,15 +82,12 @@ const FormThree = () => {
           max={4}
           accept="image/*"
           style={{ display: 'none' }}
-          onChange={(e) => {
-            setFiles(e, 'a')
-            inputRef.current.value = null
-          }}
+          onChange={(e) => handleFiles(e)}
         />
       </div>
 
       <div className='w-full space-y-3'>
-        {files.map((file) => (
+        {filesForUpload.map((file) => (
           <div className='flex flex-row space-x-2' key={file.name}>
             <div className='border-2 border-ayaNeutral-400 rounded-md h-20 w-20 bg-center bg-cover' style={{backgroundImage: 'url('+URL.createObjectURL(file)+')'}}></div>
             <div className={`font-semibold text-xs w-full grid grid-cols-2 place-content-center`}>

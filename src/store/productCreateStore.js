@@ -12,8 +12,11 @@ const productCreateStore = create(
       description: '',
       product_availability: '',
       price: '',
+      delivery: '',
       overview: '',
       specification: '',
+      images: [],
+      filesForUpload: [],
       setActiveStep: (activeStep) => set(() => ({ activeStep })),
       setName: (name) => set(() => ({ name })),
       setBrand: (brand) => set(() => ({ brand })),
@@ -21,8 +24,11 @@ const productCreateStore = create(
       setDescription: (description) => set(() => ({ description })),
       setProductAvailability: (product_availability) => set(() => ({ product_availability })),
       setPrice: (price) => set(() => ({ price })),
+      setDelivery: (delivery) => set(() => ({ delivery })),
       setOverview: (overview) => set(() => ({ overview })),
       setSpecification: (specification) => set(() => ({ specification })),
+      setImages: (images) => set(() => ({ images })),
+      setFilesForUpload: (filesForUpload) => set(() => ({ filesForUpload })),
       
     }),
     {
@@ -42,8 +48,11 @@ export const useProductCreateStore = () => {
       description,
       product_availability,
       price,
+      delivery,
       overview,
       specification,
+      filesForUpload,
+      images,
       setActiveStep,
       setName,
       setBrand,
@@ -51,8 +60,11 @@ export const useProductCreateStore = () => {
       setDescription,
       setProductAvailability,
       setPrice,
+      setDelivery,
       setOverview,
-      setSpecification
+      setSpecification,
+      setFilesForUpload,
+      setImages
     }) => ({
       activeStep,
       name,
@@ -61,8 +73,11 @@ export const useProductCreateStore = () => {
       description,
       product_availability,
       price,
+      delivery,
       overview,
       specification,
+      filesForUpload,
+      images,
       setActiveStep,
       setName,
       setBrand,
@@ -70,8 +85,11 @@ export const useProductCreateStore = () => {
       setDescription,
       setProductAvailability,
       setPrice,
+      setDelivery,
       setOverview,
-      setSpecification
+      setSpecification,
+      setFilesForUpload,
+      setImages
     }),
     shallow,
   )
