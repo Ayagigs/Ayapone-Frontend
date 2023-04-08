@@ -15,9 +15,15 @@ const sideBarData = [
   },
   {
     icon: <FiArchive />,
+    title: 'Products Insights',
+    path: routes.MERCHANT_PRODUCT_PAGE,
+    for: ['admin']
+  },
+  {
+    icon: <FiArchive />,
     title: 'Products',
     path: routes.MERCHANT_PRODUCT_PAGE,
-    for: ['merchant', 'admin']
+    for: ['merchant']
   },
   {
     icon: <MdOutlineShoppingCart />,
@@ -29,7 +35,13 @@ const sideBarData = [
     icon: <SlCalender />,
     title: 'Orders',
     path: routes.ORDERS_PAGE,
-    for: ['merchant', 'admin']
+    for: ['merchant']
+  },
+  {
+    icon: <SlCalender />,
+    title: 'Orders Insight',
+    path: routes.ORDERS_PAGE,
+    for: ['admin']
   },
   {
     icon: <MdTrackChanges />,
@@ -41,7 +53,31 @@ const sideBarData = [
     icon: <BiWallet />,
     title: 'Wallet',
     path: routes.WALLET_PAGE,
-    for: ['buyer', 'merchant', 'admin']
+    for: ['buyer', 'merchant']
+  },
+  {
+    icon: <BiWallet />,
+    title: 'System Wallet',
+    path: routes.WALLET_PAGE,
+    for: ['admin']
+  },
+  {
+    icon: <CgProfile />,
+    title: 'Admins',
+    path: routes.PROFILE_PAGE,
+    for: ['admin']
+  },
+  {
+    icon: <CgProfile />,
+    title: 'Merchants',
+    path: routes.PROFILE_PAGE,
+    for: ['admin']
+  },
+  {
+    icon: <CgProfile />,
+    title: 'Buyers',
+    path: routes.PROFILE_PAGE,
+    for: ['admin']
   },
   {
     icon: <CgProfile />,

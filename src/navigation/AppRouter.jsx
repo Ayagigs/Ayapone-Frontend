@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 
 import routes from './routes'
 
+import AdminDashboardPage from '../pages/app/admin/Dashboard'
 import AdminSignInPage from '../pages/auth/admin/SignIn'
 import AdminVerifySelfPage from '../pages/auth/admin/VerifySignIn'
 import AppLayout from '../pages/app/AppLayout'
@@ -45,6 +46,14 @@ const AppRouter = () => {
       <Route path={routes.TERMS_AND_CONDITION_PAGE} element={<TermsAndConditionPage />} />
 
       {/* TODO: PROTECT THESE ROUTES */}
+      {/* Admin Only routes */}
+      <Route path={'admin'} element={<AppLayout />}>
+        <Route path={routes.DASHBOARD_PAGE} element={<AdminDashboardPage />} />
+        <Route path={routes.PROFILE_PAGE} element={<ProfilePage />} />
+        <Route path={routes.NOTIFICATION_PAGE} element={<NotificationPage />} />
+
+      </Route>
+
       {/* Buyer Only routes */}
       <Route path={'buyer'} element={<AppLayout />}>
         <Route path={routes.DASHBOARD_PAGE} element={<BuyerDashboardPage />} />
