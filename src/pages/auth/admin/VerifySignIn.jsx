@@ -4,7 +4,7 @@ import OtpInput from 'react-otp-input'
 import { Link, useNavigate } from 'react-router-dom'
 import routes from '../../../navigation/routes'
 import { useCurrentUserStore } from '../../../store/currentUserStore'
-import { AdminSignIn } from '../../../api/authApi'
+import { AdminSignInVerify } from '../../../api/authApi'
 import { useMutation } from '@tanstack/react-query'
 import { toast } from 'react-toastify'
 
@@ -16,16 +16,18 @@ const VerifySignIn = () => {
 
   const handleSubmit = async () => {
     try {
+      const code = localStorage.getItem('avs')
       const response = await signin.mutateAsync({code, otp: otpCode})
       if (response) {
         console.log(response)
         if (response.ok) {
-          console.log(buyer.user_role);
-          if (buyer.user_role == 'admin') {
+          if (response.data?.data?.user.user_role == 'admin') {
             const admin = response.data.data.user
             setUser(admin)
             setToken(response.data.data.token)
             toast.success(response.data.message)
+
+            localStorage.removeItem('avs')
             
             navigate(`/admin/${routes.DASHBOARD_PAGE}`)
           }
